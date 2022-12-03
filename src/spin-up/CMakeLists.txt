@@ -13,11 +13,13 @@ find_package(std_msgs REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_executable(spin-up src/minimal_publisher.cpp)
-ament_target_dependencies(spin-up rclcpp std_msgs)
+add_executable(minimal_pub src/minimal_publisher.cpp)
+add_executable(motor_test src/motor_test.cpp)
+ament_target_dependencies(minimal_pub motor_test rclcpp std_msgs)
 
 install(TARGETS
-  spin-up
+  minimal_pub
+  motor_test
   DESTINATION lib/${PROJECT_NAME}
 )
 
