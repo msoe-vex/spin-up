@@ -90,7 +90,12 @@
     "files.autoSaveDelay": 1000,
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
-    "python.autoComplete.extraPaths": [
-        "/opt/ros/foxy/lib/python3.8/site-packages"
+    // Python stuff
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.analysis.extraPaths": [
+        "/opt/ros/foxy/lib/python3.8/site-packages/"
     ],
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/foxy/lib/python3.8/site-packages/"
+    ]
 }

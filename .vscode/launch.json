@@ -2,12 +2,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Publisher Example",
+            "name": "Publisher Example",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/install/publisher_example/lib/publisher_example/publisher",
             "args": [],
-            "preLaunchTask": "build",
+            "preLaunchTask": "build example",
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "externalConsole": false,

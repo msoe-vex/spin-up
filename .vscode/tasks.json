@@ -13,6 +13,17 @@
             "problemMatcher": "$gcc"
         },
         {
+            "label": "build example",
+            "detail": "Build example",
+            "type": "shell",
+            "command": "make example",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
             "label": "debug",
             "detail": "Build workspace (debug)",
             "type": "shell",

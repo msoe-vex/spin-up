@@ -9,7 +9,10 @@ SHELL = /bin/sh
 # etc.
 
 all: 
-	colcon build
+	colcon build --packages-skip spin_up
+
+example:
+	colcon build --packages-select publisher_example
 
 test:
 	source install/setup.bash
