@@ -22,7 +22,7 @@
         "twxs.cmake",
         "ms-iot.vscode-ros",
         "streetsidesoftware.code-spell-checker",
-        // File editor extensions
+        "GitHub.vscode-pull-request-github",
         "DotJoshJohnson.xml",
         "redhat.vscode-yaml",
         "yzhang.markdown-all-in-one"
