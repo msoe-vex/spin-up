@@ -1,0 +1,22 @@
+[0.193s] Invoking command in '/workspaces/vscode-docker/build/publisher_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /workspaces/vscode-docker/build/publisher_example -- -j8 -l8
+[0.508s] [100%] Built target publisher
+[0.553s] Invoked command in '/workspaces/vscode-docker/build/publisher_example' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /workspaces/vscode-docker/build/publisher_example -- -j8 -l8
+[0.656s] Invoking command in '/workspaces/vscode-docker/build/publisher_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /workspaces/vscode-docker/build/publisher_example
+[0.672s] -- Install configuration: ""
+[0.729s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/lib/publisher_example/publisher
+[0.828s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/package_run_dependencies/publisher_example
+[0.877s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/parent_prefix_path/publisher_example
+[0.906s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/ament_prefix_path.sh
+[0.940s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/ament_prefix_path.dsv
+[0.964s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/path.sh
+[0.994s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/path.dsv
+[1.032s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.bash
+[1.063s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.sh
+[1.088s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.zsh
+[1.129s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.dsv
+[1.157s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.dsv
+[1.270s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/packages/publisher_example
+[1.305s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/cmake/publisher_exampleConfig.cmake
+[1.330s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/cmake/publisher_exampleConfig-version.cmake
+[1.361s] -- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.xml
+[1.377s] Invoked command in '/workspaces/vscode-docker/build/publisher_example' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /workspaces/vscode-docker/build/publisher_example

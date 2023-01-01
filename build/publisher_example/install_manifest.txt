@@ -1,0 +1,16 @@
+/workspaces/vscode-docker/install/publisher_example/lib/publisher_example/publisher
+/workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/package_run_dependencies/publisher_example
+/workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/parent_prefix_path/publisher_example
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/ament_prefix_path.sh
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/ament_prefix_path.dsv
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/path.sh
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/path.dsv
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.bash
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.sh
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.zsh
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.dsv
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.dsv
+/workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/packages/publisher_example
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/cmake/publisher_exampleConfig.cmake
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/cmake/publisher_exampleConfig-version.cmake
+/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.xml

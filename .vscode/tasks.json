@@ -1,0 +1,70 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // Build tasks
+        {
+            "label": "build",
+            "detail": "Build workspace (default)",
+            "type": "shell",
+            "command": "scripts/build.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "debug",
+            "detail": "Build workspace (debug)",
+            "type": "shell",
+            "command": "scripts/build.sh",
+            "options": {
+                "env": {
+                    "BUILD_TYPE": "Debug"
+                }
+            },
+            "group": "build",
+            "problemMatcher": "$gcc"
+        },
+        // Test tasks
+        {
+            "label": "test",
+            "detail": "Run all unit tests and show results.",
+            "type": "shell",
+            "command": "scripts/test.sh",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        // Cleanup tasks
+        {
+            "label": "clean",
+            "detail": "Run the clean target",
+            "type": "shell",
+            "command": "colcon build --cmake-target clean",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "purge",
+            "detail": "Purge workspace by deleting all generated files.",
+            "type": "shell",
+            "command": "rm -fr build install log",
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "install dependencies",
+        //     "detail": "Install all dependencies specified in the workspaces package.xml files.",
+        //     "type": "shell",
+        //     "command": "sudo apt-get update && rosdep update && rosdep install --from-paths src --ignore-src -y",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "setup",
+            "detail": "Set up the workspace",
+            "type": "shell",
+            "command": "scripts/setup.sh",
+            "problemMatcher": []
+        }
+    ]
+}

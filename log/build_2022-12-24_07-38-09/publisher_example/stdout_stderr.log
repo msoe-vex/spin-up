@@ -1,0 +1,18 @@
+[100%] Built target publisher
+-- Install configuration: ""
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/lib/publisher_example/publisher
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/package_run_dependencies/publisher_example
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/parent_prefix_path/publisher_example
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/ament_prefix_path.sh
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/ament_prefix_path.dsv
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/path.sh
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/path.dsv
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.bash
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.sh
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.zsh
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.dsv
+-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.dsv
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/packages/publisher_example
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/cmake/publisher_exampleConfig.cmake
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/cmake/publisher_exampleConfig-version.cmake
+-- Up-to-date: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.xml

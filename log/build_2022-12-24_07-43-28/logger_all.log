@@ -1,0 +1,157 @@
+[0.269s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.270s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7efc34d41a90>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=8, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7efc34d41a90>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7efc34d4e040>)
+[0.322s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.323s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.323s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.324s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.324s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.325s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.326s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/workspaces/vscode-docker'
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.333s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.333s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.358s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.359s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.366s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.366s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.368s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.380s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.380s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.384s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['ignore', 'ignore_ament_install']
+[0.384s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ignore'
+[0.384s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ignore_ament_install'
+[0.385s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['colcon_pkg']
+[0.385s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'colcon_pkg'
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['colcon_meta']
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'colcon_meta'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['ros']
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ros'
+[0.389s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['cmake', 'python']
+[0.389s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'cmake'
+[0.390s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'python'
+[0.390s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['python_setup_py']
+[0.391s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'python_setup_py'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.401s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.401s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.407s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.408s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.410s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.412s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.413s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(src/publisher_example) by extensions ['ignore', 'ignore_ament_install']
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(src/publisher_example) by extension 'ignore'
+[0.422s] Level 1:colcon.colcon_core.package_identification:_identify(src/publisher_example) by extension 'ignore_ament_install'
+[0.426s] Level 1:colcon.colcon_core.package_identification:_identify(src/publisher_example) by extensions ['colcon_pkg']
+[0.426s] Level 1:colcon.colcon_core.package_identification:_identify(src/publisher_example) by extension 'colcon_pkg'
+[0.428s] Level 1:colcon.colcon_core.package_identification:_identify(src/publisher_example) by extensions ['colcon_meta']
+[0.429s] Level 1:colcon.colcon_core.package_identification:_identify(src/publisher_example) by extension 'colcon_meta'
+[0.431s] Level 1:colcon.colcon_core.package_identification:_identify(src/publisher_example) by extensions ['ros']
+[0.432s] Level 1:colcon.colcon_core.package_identification:_identify(src/publisher_example) by extension 'ros'
+[0.453s] DEBUG:colcon.colcon_core.package_identification:Package 'src/publisher_example' with type 'ros.ament_cmake' and name 'publisher_example'
+[0.454s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.454s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.455s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.455s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.455s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.510s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.510s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.564s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /workspaces/vscode-docker/install
+[0.567s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 168 installed packages in /opt/ros/foxy
+[0.568s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.650s] Level 5:colcon.colcon_core.verb:set package 'publisher_example' build argument 'cmake_args' from command line to 'None'
+[0.650s] Level 5:colcon.colcon_core.verb:set package 'publisher_example' build argument 'cmake_target' from command line to 'None'
+[0.651s] Level 5:colcon.colcon_core.verb:set package 'publisher_example' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.651s] Level 5:colcon.colcon_core.verb:set package 'publisher_example' build argument 'cmake_clean_cache' from command line to 'False'
+[0.652s] Level 5:colcon.colcon_core.verb:set package 'publisher_example' build argument 'cmake_clean_first' from command line to 'False'
+[0.652s] Level 5:colcon.colcon_core.verb:set package 'publisher_example' build argument 'cmake_force_configure' from command line to 'False'
+[0.653s] Level 5:colcon.colcon_core.verb:set package 'publisher_example' build argument 'ament_cmake_args' from command line to 'None'
+[0.653s] Level 5:colcon.colcon_core.verb:set package 'publisher_example' build argument 'catkin_cmake_args' from command line to 'None'
+[0.654s] Level 5:colcon.colcon_core.verb:set package 'publisher_example' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.654s] DEBUG:colcon.colcon_core.verb:Building package 'publisher_example' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspaces/vscode-docker/build/publisher_example', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspaces/vscode-docker/install/publisher_example', 'merge_install': False, 'path': '/workspaces/vscode-docker/src/publisher_example', 'symlink_install': False, 'test_result_base': None}
+[0.656s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.663s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.664s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspaces/vscode-docker/src/publisher_example' with build type 'ament_cmake'
+[0.664s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspaces/vscode-docker/src/publisher_example'
+[0.675s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.676s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.677s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.829s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspaces/vscode-docker/build/publisher_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /workspaces/vscode-docker/build/publisher_example -- -j8 -l8
+[1.205s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspaces/vscode-docker/build/publisher_example' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /workspaces/vscode-docker/build/publisher_example -- -j8 -l8
+[1.300s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspaces/vscode-docker/build/publisher_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /workspaces/vscode-docker/build/publisher_example
+[2.080s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(publisher_example)
+[2.084s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspaces/vscode-docker/build/publisher_example' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /workspaces/vscode-docker/build/publisher_example
+[2.089s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example' for CMake module files
+[2.226s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example' for CMake config files
+[2.339s] Level 1:colcon.colcon_core.shell:create_environment_hook('publisher_example', 'cmake_prefix_path')
+[2.342s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/hook/cmake_prefix_path.ps1'
+[2.370s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/hook/cmake_prefix_path.dsv'
+[2.396s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/hook/cmake_prefix_path.sh'
+[2.425s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example/lib'
+[2.433s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example/bin'
+[2.435s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example/lib/pkgconfig/publisher_example.pc'
+[2.438s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example/lib/python3.8/site-packages'
+[2.442s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example/bin'
+[2.447s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.ps1'
+[2.468s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.dsv'
+[2.494s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.sh'
+[2.519s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.bash'
+[2.540s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.zsh'
+[2.567s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspaces/vscode-docker/install/publisher_example/share/colcon-core/packages/publisher_example)
+[2.666s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(publisher_example)
+[2.669s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example' for CMake module files
+[2.791s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example' for CMake config files
+[2.891s] Level 1:colcon.colcon_core.shell:create_environment_hook('publisher_example', 'cmake_prefix_path')
+[2.896s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/hook/cmake_prefix_path.ps1'
+[2.920s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/hook/cmake_prefix_path.dsv'
+[2.945s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/hook/cmake_prefix_path.sh'
+[2.972s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example/lib'
+[2.979s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example/bin'
+[2.982s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example/lib/pkgconfig/publisher_example.pc'
+[2.987s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example/lib/python3.8/site-packages'
+[2.989s] Level 1:colcon.colcon_core.environment:checking '/workspaces/vscode-docker/install/publisher_example/bin'
+[2.996s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.ps1'
+[3.021s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.dsv'
+[3.041s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.sh'
+[3.061s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.bash'
+[3.080s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.zsh'
+[3.100s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspaces/vscode-docker/install/publisher_example/share/colcon-core/packages/publisher_example)
+[3.114s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.115s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.116s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.116s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.140s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[3.140s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.141s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.141s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.142s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.NotSupported: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+[3.143s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.145s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspaces/vscode-docker/install/local_setup.ps1'
+[3.156s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspaces/vscode-docker/install/_local_setup_util_ps1.py'
+[3.168s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspaces/vscode-docker/install/setup.ps1'
+[3.193s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspaces/vscode-docker/install/local_setup.sh'
+[3.202s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspaces/vscode-docker/install/_local_setup_util_sh.py'
+[3.210s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspaces/vscode-docker/install/setup.sh'
+[3.235s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspaces/vscode-docker/install/local_setup.bash'
+[3.244s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspaces/vscode-docker/install/setup.bash'
+[3.268s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspaces/vscode-docker/install/local_setup.zsh'
+[3.277s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspaces/vscode-docker/install/setup.zsh'

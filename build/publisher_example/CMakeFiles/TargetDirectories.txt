@@ -1,0 +1,10 @@
+/workspaces/vscode-docker/build/publisher_example/CMakeFiles/install/local.dir
+/workspaces/vscode-docker/build/publisher_example/CMakeFiles/install.dir
+/workspaces/vscode-docker/build/publisher_example/CMakeFiles/list_install_components.dir
+/workspaces/vscode-docker/build/publisher_example/CMakeFiles/rebuild_cache.dir
+/workspaces/vscode-docker/build/publisher_example/CMakeFiles/edit_cache.dir
+/workspaces/vscode-docker/build/publisher_example/CMakeFiles/test.dir
+/workspaces/vscode-docker/build/publisher_example/CMakeFiles/install/strip.dir
+/workspaces/vscode-docker/build/publisher_example/CMakeFiles/publisher.dir
+/workspaces/vscode-docker/build/publisher_example/CMakeFiles/publisher_example_uninstall.dir
+/workspaces/vscode-docker/build/publisher_example/CMakeFiles/uninstall.dir

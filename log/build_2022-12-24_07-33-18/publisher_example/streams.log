@@ -1,0 +1,65 @@
+[0.144s] Invoking command in '/workspaces/vscode-docker/build/publisher_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /workspaces/vscode-docker/src/publisher_example -DCMAKE_INSTALL_PREFIX=/workspaces/vscode-docker/install/publisher_example
+[0.730s] -- The C compiler identification is GNU 9.4.0
+[1.174s] -- The CXX compiler identification is GNU 9.4.0
+[1.279s] -- Check for working C compiler: /usr/bin/cc
+[2.127s] -- Check for working C compiler: /usr/bin/cc -- works
+[2.136s] -- Detecting C compiler ABI info
+[3.013s] -- Detecting C compiler ABI info - done
+[3.059s] -- Detecting C compile features
+[3.061s] -- Detecting C compile features - done
+[3.109s] -- Check for working CXX compiler: /usr/bin/c++
+[3.927s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[3.936s] -- Detecting CXX compiler ABI info
+[4.775s] -- Detecting CXX compiler ABI info - done
+[4.819s] -- Detecting CXX compile features
+[4.820s] -- Detecting CXX compile features - done
+[4.900s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[4.973s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[4.975s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[5.393s] -- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+[5.498s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.514s] -- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[6.027s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[6.100s] -- Found FastRTPS: /opt/ros/foxy/include  
+[6.250s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[6.379s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[6.387s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[6.436s] -- Looking for pthread.h
+[7.178s] -- Looking for pthread.h - found
+[7.192s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[8.005s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[8.011s] -- Looking for pthread_create in pthreads
+[8.728s] -- Looking for pthread_create in pthreads - not found
+[8.735s] -- Looking for pthread_create in pthread
+[9.552s] -- Looking for pthread_create in pthread - found
+[9.558s] -- Found Threads: TRUE  
+[10.540s] -- Configuring done
+[10.945s] -- Generating done
+[11.056s] -- Build files have been written to: /workspaces/vscode-docker/build/publisher_example
+[11.063s] Invoked command in '/workspaces/vscode-docker/build/publisher_example' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /workspaces/vscode-docker/src/publisher_example -DCMAKE_INSTALL_PREFIX=/workspaces/vscode-docker/install/publisher_example
+[11.083s] Invoking command in '/workspaces/vscode-docker/build/publisher_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /workspaces/vscode-docker/build/publisher_example -- -j8 -l8
+[11.470s] [35m[1mScanning dependencies of target publisher[0m
+[12.567s] [ 50%] [32mBuilding CXX object CMakeFiles/publisher.dir/src/publisher.cpp.o[0m
+[17.799s] [100%] [32m[1mLinking CXX executable publisher[0m
+[20.561s] [100%] Built target publisher
+[20.620s] Invoked command in '/workspaces/vscode-docker/build/publisher_example' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /workspaces/vscode-docker/build/publisher_example -- -j8 -l8
+[21.039s] Invoking command in '/workspaces/vscode-docker/build/publisher_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /workspaces/vscode-docker/build/publisher_example
+[21.093s] -- Install configuration: ""
+[21.121s] -- Installing: /workspaces/vscode-docker/install/publisher_example/lib/publisher_example/publisher
+[21.317s] -- Set runtime path of "/workspaces/vscode-docker/install/publisher_example/lib/publisher_example/publisher" to ""
+[21.377s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/package_run_dependencies/publisher_example
+[21.555s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/parent_prefix_path/publisher_example
+[21.671s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/ament_prefix_path.sh
+[21.757s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/ament_prefix_path.dsv
+[21.846s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/path.sh
+[21.941s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/path.dsv
+[22.040s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.bash
+[22.121s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.sh
+[22.207s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.zsh
+[22.291s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.dsv
+[22.376s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.dsv
+[22.489s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/packages/publisher_example
+[22.637s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/cmake/publisher_exampleConfig.cmake
+[22.739s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/cmake/publisher_exampleConfig-version.cmake
+[22.850s] -- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.xml
+[22.937s] Invoked command in '/workspaces/vscode-docker/build/publisher_example' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /workspaces/vscode-docker/build/publisher_example

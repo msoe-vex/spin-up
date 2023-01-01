@@ -1,0 +1,311 @@
+[0.000000] (-) TimerEvent: {}
+[0.002523] (publisher_example) JobQueued: {'identifier': 'publisher_example', 'dependencies': OrderedDict()}
+[0.003089] (publisher_example) JobStarted: {'identifier': 'publisher_example'}
+[0.097432] (-) TimerEvent: {}
+[0.109920] (publisher_example) JobProgress: {'identifier': 'publisher_example', 'progress': 'cmake'}
+[0.125483] (publisher_example) Command: {'cmd': ['/usr/bin/cmake', '/workspaces/vscode-docker/src/publisher_example', '-DCMAKE_INSTALL_PREFIX=/workspaces/vscode-docker/install/publisher_example'], 'cwd': '/workspaces/vscode-docker/build/publisher_example', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('HOSTNAME', '055d5e4e629c'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspaces/vscode-docker/install/turtlesim/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/bin/helpers/browser.sh'), ('AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS', '1'), ('HOME', '/home/ros'), ('TERM_PROGRAM_VERSION', '1.74.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-5b40af5d-2ad0-40a3-aa56-a7f048cf1292.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('COLCON_PREFIX_PATH', '/workspaces/vscode-docker/install:/opt/ros/foxy'), ('ROS_DISTRO', 'foxy'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-65bd80d17a33915bbc83048f122f84a1dfe9c485.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/bin/remote-cli:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-65bd80d17a33915bbc83048f122f84a1dfe9c485.sock"]'), ('LANG', 'en_US.UTF-8'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-876531aff6.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-65bd80d17a33915bbc83048f122f84a1dfe9c485.sock'), ('AMENT_PREFIX_PATH', '/workspaces/vscode-docker/install/turtlesim:/workspaces/vscode-docker/install/publisher_example:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/workspaces/vscode-docker/build/publisher_example'), ('PYTHONPATH', '/workspaces/vscode-docker/install/turtlesim/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspaces/vscode-docker/install/turtlesim:/workspaces/vscode-docker/install/publisher_example:/opt/ros/foxy')]), 'shell': False}
+[0.197598] (-) TimerEvent: {}
+[0.298310] (-) TimerEvent: {}
+[0.399094] (-) TimerEvent: {}
+[0.499777] (-) TimerEvent: {}
+[0.605717] (-) TimerEvent: {}
+[0.706610] (-) TimerEvent: {}
+[0.732733] (publisher_example) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.806794] (-) TimerEvent: {}
+[0.907688] (-) TimerEvent: {}
+[1.008407] (-) TimerEvent: {}
+[1.109091] (-) TimerEvent: {}
+[1.176248] (publisher_example) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[1.209246] (-) TimerEvent: {}
+[1.281439] (publisher_example) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc\n'}
+[1.309458] (-) TimerEvent: {}
+[1.410367] (-) TimerEvent: {}
+[1.511167] (-) TimerEvent: {}
+[1.611941] (-) TimerEvent: {}
+[1.712670] (-) TimerEvent: {}
+[1.813347] (-) TimerEvent: {}
+[1.914088] (-) TimerEvent: {}
+[2.015068] (-) TimerEvent: {}
+[2.115789] (-) TimerEvent: {}
+[2.129399] (publisher_example) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc -- works\n'}
+[2.137617] (publisher_example) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[2.216014] (-) TimerEvent: {}
+[2.316709] (-) TimerEvent: {}
+[2.417571] (-) TimerEvent: {}
+[2.518454] (-) TimerEvent: {}
+[2.619315] (-) TimerEvent: {}
+[2.720152] (-) TimerEvent: {}
+[2.820940] (-) TimerEvent: {}
+[2.921669] (-) TimerEvent: {}
+[3.015400] (publisher_example) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[3.021857] (-) TimerEvent: {}
+[3.061792] (publisher_example) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[3.064003] (publisher_example) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[3.112375] (publisher_example) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[3.121999] (-) TimerEvent: {}
+[3.222751] (-) TimerEvent: {}
+[3.323675] (-) TimerEvent: {}
+[3.424348] (-) TimerEvent: {}
+[3.525104] (-) TimerEvent: {}
+[3.625792] (-) TimerEvent: {}
+[3.726565] (-) TimerEvent: {}
+[3.827307] (-) TimerEvent: {}
+[3.927971] (-) TimerEvent: {}
+[3.929917] (publisher_example) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[3.937130] (publisher_example) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[4.028118] (-) TimerEvent: {}
+[4.128801] (-) TimerEvent: {}
+[4.229440] (-) TimerEvent: {}
+[4.330085] (-) TimerEvent: {}
+[4.430935] (-) TimerEvent: {}
+[4.531667] (-) TimerEvent: {}
+[4.632460] (-) TimerEvent: {}
+[4.733190] (-) TimerEvent: {}
+[4.777515] (publisher_example) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[4.821708] (publisher_example) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[4.823328] (publisher_example) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[4.833361] (-) TimerEvent: {}
+[4.901630] (publisher_example) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[4.933554] (-) TimerEvent: {}
+[4.975448] (publisher_example) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[4.977402] (publisher_example) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[5.033723] (-) TimerEvent: {}
+[5.134503] (-) TimerEvent: {}
+[5.235571] (-) TimerEvent: {}
+[5.336566] (-) TimerEvent: {}
+[5.396132] (publisher_example) StdoutLine: {'line': b'-- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)\n'}
+[5.436771] (-) TimerEvent: {}
+[5.500063] (publisher_example) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[5.516069] (publisher_example) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[5.537023] (-) TimerEvent: {}
+[5.637778] (-) TimerEvent: {}
+[5.738629] (-) TimerEvent: {}
+[5.839463] (-) TimerEvent: {}
+[5.940443] (-) TimerEvent: {}
+[6.029557] (publisher_example) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  \n'}
+[6.040621] (-) TimerEvent: {}
+[6.102913] (publisher_example) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/foxy/include  \n'}
+[6.140793] (-) TimerEvent: {}
+[6.241561] (-) TimerEvent: {}
+[6.252396] (publisher_example) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[6.341798] (-) TimerEvent: {}
+[6.381389] (publisher_example) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[6.389082] (publisher_example) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[6.438665] (publisher_example) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[6.441983] (-) TimerEvent: {}
+[6.542638] (-) TimerEvent: {}
+[6.643568] (-) TimerEvent: {}
+[6.744309] (-) TimerEvent: {}
+[6.845199] (-) TimerEvent: {}
+[6.945792] (-) TimerEvent: {}
+[7.046467] (-) TimerEvent: {}
+[7.147328] (-) TimerEvent: {}
+[7.180949] (publisher_example) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[7.194818] (publisher_example) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[7.247471] (-) TimerEvent: {}
+[7.348175] (-) TimerEvent: {}
+[7.448904] (-) TimerEvent: {}
+[7.549590] (-) TimerEvent: {}
+[7.650331] (-) TimerEvent: {}
+[7.751145] (-) TimerEvent: {}
+[7.852133] (-) TimerEvent: {}
+[7.952953] (-) TimerEvent: {}
+[8.007947] (publisher_example) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed\n'}
+[8.013897] (publisher_example) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads\n'}
+[8.053103] (-) TimerEvent: {}
+[8.153733] (-) TimerEvent: {}
+[8.254337] (-) TimerEvent: {}
+[8.354969] (-) TimerEvent: {}
+[8.455583] (-) TimerEvent: {}
+[8.556166] (-) TimerEvent: {}
+[8.656762] (-) TimerEvent: {}
+[8.731382] (publisher_example) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads - not found\n'}
+[8.737773] (publisher_example) StdoutLine: {'line': b'-- Looking for pthread_create in pthread\n'}
+[8.756952] (-) TimerEvent: {}
+[8.857611] (-) TimerEvent: {}
+[8.958363] (-) TimerEvent: {}
+[9.058991] (-) TimerEvent: {}
+[9.159627] (-) TimerEvent: {}
+[9.260365] (-) TimerEvent: {}
+[9.361008] (-) TimerEvent: {}
+[9.461597] (-) TimerEvent: {}
+[9.554974] (publisher_example) StdoutLine: {'line': b'-- Looking for pthread_create in pthread - found\n'}
+[9.561412] (publisher_example) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[9.562409] (-) TimerEvent: {}
+[9.662962] (-) TimerEvent: {}
+[9.763760] (-) TimerEvent: {}
+[9.864439] (-) TimerEvent: {}
+[9.965081] (-) TimerEvent: {}
+[10.065886] (-) TimerEvent: {}
+[10.166471] (-) TimerEvent: {}
+[10.267306] (-) TimerEvent: {}
+[10.368087] (-) TimerEvent: {}
+[10.468726] (-) TimerEvent: {}
+[10.542399] (publisher_example) StdoutLine: {'line': b'-- Configuring done\n'}
+[10.568870] (-) TimerEvent: {}
+[10.669616] (-) TimerEvent: {}
+[10.770402] (-) TimerEvent: {}
+[10.871130] (-) TimerEvent: {}
+[10.947522] (publisher_example) StdoutLine: {'line': b'-- Generating done\n'}
+[10.971253] (-) TimerEvent: {}
+[11.059082] (publisher_example) StdoutLine: {'line': b'-- Build files have been written to: /workspaces/vscode-docker/build/publisher_example\n'}
+[11.065665] (publisher_example) CommandEnded: {'returncode': 0}
+[11.071420] (-) TimerEvent: {}
+[11.074754] (publisher_example) JobProgress: {'identifier': 'publisher_example', 'progress': 'build'}
+[11.082311] (publisher_example) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspaces/vscode-docker/build/publisher_example', '--', '-j8', '-l8'], 'cwd': '/workspaces/vscode-docker/build/publisher_example', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('HOSTNAME', '055d5e4e629c'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspaces/vscode-docker/install/turtlesim/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/bin/helpers/browser.sh'), ('AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS', '1'), ('HOME', '/home/ros'), ('TERM_PROGRAM_VERSION', '1.74.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-5b40af5d-2ad0-40a3-aa56-a7f048cf1292.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('COLCON_PREFIX_PATH', '/workspaces/vscode-docker/install:/opt/ros/foxy'), ('ROS_DISTRO', 'foxy'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-65bd80d17a33915bbc83048f122f84a1dfe9c485.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/bin/remote-cli:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-65bd80d17a33915bbc83048f122f84a1dfe9c485.sock"]'), ('LANG', 'en_US.UTF-8'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-876531aff6.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-65bd80d17a33915bbc83048f122f84a1dfe9c485.sock'), ('AMENT_PREFIX_PATH', '/workspaces/vscode-docker/install/turtlesim:/workspaces/vscode-docker/install/publisher_example:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/workspaces/vscode-docker/build/publisher_example'), ('PYTHONPATH', '/workspaces/vscode-docker/install/turtlesim/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspaces/vscode-docker/install/turtlesim:/workspaces/vscode-docker/install/publisher_example:/opt/ros/foxy')]), 'shell': False}
+[11.171765] (-) TimerEvent: {}
+[11.272822] (-) TimerEvent: {}
+[11.373705] (-) TimerEvent: {}
+[11.472063] (publisher_example) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target publisher\x1b[0m\n'}
+[11.473951] (-) TimerEvent: {}
+[11.574740] (-) TimerEvent: {}
+[11.675381] (-) TimerEvent: {}
+[11.776043] (-) TimerEvent: {}
+[11.876623] (-) TimerEvent: {}
+[11.977342] (-) TimerEvent: {}
+[12.077960] (-) TimerEvent: {}
+[12.178560] (-) TimerEvent: {}
+[12.279118] (-) TimerEvent: {}
+[12.379680] (-) TimerEvent: {}
+[12.480303] (-) TimerEvent: {}
+[12.570097] (publisher_example) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/publisher.dir/src/publisher.cpp.o\x1b[0m\n'}
+[12.580472] (-) TimerEvent: {}
+[12.681178] (-) TimerEvent: {}
+[12.781938] (-) TimerEvent: {}
+[12.882725] (-) TimerEvent: {}
+[12.984584] (-) TimerEvent: {}
+[13.085426] (-) TimerEvent: {}
+[13.186313] (-) TimerEvent: {}
+[13.287393] (-) TimerEvent: {}
+[13.388466] (-) TimerEvent: {}
+[13.489432] (-) TimerEvent: {}
+[13.590320] (-) TimerEvent: {}
+[13.691232] (-) TimerEvent: {}
+[13.792307] (-) TimerEvent: {}
+[13.893199] (-) TimerEvent: {}
+[13.993978] (-) TimerEvent: {}
+[14.094839] (-) TimerEvent: {}
+[14.195701] (-) TimerEvent: {}
+[14.296613] (-) TimerEvent: {}
+[14.397524] (-) TimerEvent: {}
+[14.498423] (-) TimerEvent: {}
+[14.599225] (-) TimerEvent: {}
+[14.700197] (-) TimerEvent: {}
+[14.801058] (-) TimerEvent: {}
+[14.901808] (-) TimerEvent: {}
+[15.002556] (-) TimerEvent: {}
+[15.103420] (-) TimerEvent: {}
+[15.204316] (-) TimerEvent: {}
+[15.305180] (-) TimerEvent: {}
+[15.406056] (-) TimerEvent: {}
+[15.506985] (-) TimerEvent: {}
+[15.607892] (-) TimerEvent: {}
+[15.708725] (-) TimerEvent: {}
+[15.809624] (-) TimerEvent: {}
+[15.910416] (-) TimerEvent: {}
+[16.011148] (-) TimerEvent: {}
+[16.111944] (-) TimerEvent: {}
+[16.212710] (-) TimerEvent: {}
+[16.313618] (-) TimerEvent: {}
+[16.414391] (-) TimerEvent: {}
+[16.515231] (-) TimerEvent: {}
+[16.615994] (-) TimerEvent: {}
+[16.716822] (-) TimerEvent: {}
+[16.817608] (-) TimerEvent: {}
+[16.918382] (-) TimerEvent: {}
+[17.019229] (-) TimerEvent: {}
+[17.120125] (-) TimerEvent: {}
+[17.220986] (-) TimerEvent: {}
+[17.321924] (-) TimerEvent: {}
+[17.422839] (-) TimerEvent: {}
+[17.523420] (-) TimerEvent: {}
+[17.623958] (-) TimerEvent: {}
+[17.724686] (-) TimerEvent: {}
+[17.801187] (publisher_example) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable publisher\x1b[0m\n'}
+[17.824858] (-) TimerEvent: {}
+[17.925552] (-) TimerEvent: {}
+[18.026221] (-) TimerEvent: {}
+[18.126944] (-) TimerEvent: {}
+[18.227632] (-) TimerEvent: {}
+[18.328312] (-) TimerEvent: {}
+[18.428994] (-) TimerEvent: {}
+[18.529664] (-) TimerEvent: {}
+[18.630330] (-) TimerEvent: {}
+[18.730989] (-) TimerEvent: {}
+[18.831598] (-) TimerEvent: {}
+[18.932226] (-) TimerEvent: {}
+[19.034123] (-) TimerEvent: {}
+[19.135026] (-) TimerEvent: {}
+[19.235789] (-) TimerEvent: {}
+[19.336881] (-) TimerEvent: {}
+[19.437786] (-) TimerEvent: {}
+[19.538549] (-) TimerEvent: {}
+[19.639212] (-) TimerEvent: {}
+[19.739892] (-) TimerEvent: {}
+[19.840641] (-) TimerEvent: {}
+[19.941370] (-) TimerEvent: {}
+[20.042167] (-) TimerEvent: {}
+[20.142799] (-) TimerEvent: {}
+[20.243365] (-) TimerEvent: {}
+[20.343997] (-) TimerEvent: {}
+[20.444602] (-) TimerEvent: {}
+[20.545492] (-) TimerEvent: {}
+[20.563874] (publisher_example) StdoutLine: {'line': b'[100%] Built target publisher\n'}
+[20.622839] (publisher_example) CommandEnded: {'returncode': 0}
+[20.645705] (-) TimerEvent: {}
+[20.746440] (-) TimerEvent: {}
+[20.847187] (-) TimerEvent: {}
+[20.947886] (-) TimerEvent: {}
+[20.995655] (publisher_example) JobProgress: {'identifier': 'publisher_example', 'progress': 'install'}
+[21.038575] (publisher_example) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspaces/vscode-docker/build/publisher_example'], 'cwd': '/workspaces/vscode-docker/build/publisher_example', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('HOSTNAME', '055d5e4e629c'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspaces/vscode-docker/install/turtlesim/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/bin/helpers/browser.sh'), ('AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS', '1'), ('HOME', '/home/ros'), ('TERM_PROGRAM_VERSION', '1.74.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-5b40af5d-2ad0-40a3-aa56-a7f048cf1292.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('COLCON_PREFIX_PATH', '/workspaces/vscode-docker/install:/opt/ros/foxy'), ('ROS_DISTRO', 'foxy'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-65bd80d17a33915bbc83048f122f84a1dfe9c485.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-x64/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/bin/remote-cli:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-65bd80d17a33915bbc83048f122f84a1dfe9c485.sock"]'), ('LANG', 'en_US.UTF-8'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-876531aff6.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-65bd80d17a33915bbc83048f122f84a1dfe9c485.sock'), ('AMENT_PREFIX_PATH', '/workspaces/vscode-docker/install/turtlesim:/workspaces/vscode-docker/install/publisher_example:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/workspaces/vscode-docker/build/publisher_example'), ('PYTHONPATH', '/workspaces/vscode-docker/install/turtlesim/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspaces/vscode-docker/install/turtlesim:/workspaces/vscode-docker/install/publisher_example:/opt/ros/foxy')]), 'shell': False}
+[21.048090] (-) TimerEvent: {}
+[21.095829] (publisher_example) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[21.124203] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/lib/publisher_example/publisher\n'}
+[21.148219] (-) TimerEvent: {}
+[21.248909] (-) TimerEvent: {}
+[21.319060] (publisher_example) StdoutLine: {'line': b'-- Set runtime path of "/workspaces/vscode-docker/install/publisher_example/lib/publisher_example/publisher" to ""\n'}
+[21.349120] (-) TimerEvent: {}
+[21.380196] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/package_run_dependencies/publisher_example\n'}
+[21.449304] (-) TimerEvent: {}
+[21.550309] (-) TimerEvent: {}
+[21.557557] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/parent_prefix_path/publisher_example\n'}
+[21.650466] (-) TimerEvent: {}
+[21.673549] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/ament_prefix_path.sh\n'}
+[21.750646] (-) TimerEvent: {}
+[21.759273] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/ament_prefix_path.dsv\n'}
+[21.848651] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/path.sh\n'}
+[21.850773] (-) TimerEvent: {}
+[21.943871] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/environment/path.dsv\n'}
+[21.950992] (-) TimerEvent: {}
+[22.043004] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.bash\n'}
+[22.051136] (-) TimerEvent: {}
+[22.123354] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.sh\n'}
+[22.151330] (-) TimerEvent: {}
+[22.209619] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.zsh\n'}
+[22.251529] (-) TimerEvent: {}
+[22.293464] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/local_setup.dsv\n'}
+[22.351685] (-) TimerEvent: {}
+[22.378394] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.dsv\n'}
+[22.451870] (-) TimerEvent: {}
+[22.491749] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/ament_index/resource_index/packages/publisher_example\n'}
+[22.552055] (-) TimerEvent: {}
+[22.639228] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/cmake/publisher_exampleConfig.cmake\n'}
+[22.652237] (-) TimerEvent: {}
+[22.742125] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/cmake/publisher_exampleConfig-version.cmake\n'}
+[22.752400] (-) TimerEvent: {}
+[22.852130] (publisher_example) StdoutLine: {'line': b'-- Installing: /workspaces/vscode-docker/install/publisher_example/share/publisher_example/package.xml\n'}
+[22.853884] (-) TimerEvent: {}
+[22.928981] (publisher_example) CommandEnded: {'returncode': 0}
+[22.954055] (-) TimerEvent: {}
+[23.054889] (-) TimerEvent: {}
+[23.155657] (-) TimerEvent: {}
+[23.256398] (-) TimerEvent: {}
+[23.357126] (-) TimerEvent: {}
+[23.458024] (-) TimerEvent: {}
+[23.558643] (-) TimerEvent: {}
+[23.659290] (-) TimerEvent: {}
+[23.760059] (-) TimerEvent: {}
+[23.860870] (-) TimerEvent: {}
+[23.961490] (-) TimerEvent: {}
+[23.967811] (publisher_example) JobEnded: {'identifier': 'publisher_example', 'rc': 0}
+[23.983434] (-) EventReactorShutdown: {}

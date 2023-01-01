@@ -1,0 +1,4 @@
+Invoking command in '/workspaces/vscode-docker/build/publisher_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /workspaces/vscode-docker/build/publisher_example -- -j8 -l8
+Invoked command in '/workspaces/vscode-docker/build/publisher_example' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /workspaces/vscode-docker/build/publisher_example -- -j8 -l8
+Invoking command in '/workspaces/vscode-docker/build/publisher_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /workspaces/vscode-docker/build/publisher_example
+Invoked command in '/workspaces/vscode-docker/build/publisher_example' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /workspaces/vscode-docker/build/publisher_example
