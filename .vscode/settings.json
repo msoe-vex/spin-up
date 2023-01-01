@@ -1,5 +1,6 @@
 {
     "task.autoDetect": "off",
+    "task.allowAutomaticTasks": "off",
     "C_Cpp.default.intelliSenseMode": "linux-gcc-x86",
     "C_Cpp.formatting": "clangFormat",
     "search.exclude": {
@@ -83,11 +84,11 @@
         "typeindex": "cpp",
         "typeinfo": "cpp"
     },
-    "python.autoComplete.extraPaths": [
-        "/opt/ros/foxy/lib/python3.8/site-packages"
-    ],
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1000,
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/foxy/lib/python3.8/site-packages"
+    ],
 }

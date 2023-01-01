@@ -1,20 +1,19 @@
 // Docs: https://aka.ms/vscode-remote/devcontainer.json
 {
     "context": "../", // top level folder
-    "dockerFile": "Dockerfile", // Dockerfile name
+    "dockerFile": "Dockerfile",
+    "remoteUser": "ros",
     "build": {
         "args": {
             "WORKSPACE": "${containerWorkspaceFolder}"
         }
     },
     // This will launch the container as a non-root user
-    "remoteUser": "ros",
     "runArgs": [
         // This will allow you to use a ptrace-based debugger like C++
         "--cap-add=SYS_PTRACE",
         "--security-opt=seccomp:unconfined",
         "--security-opt=apparmor:unconfined"
-        // "seccomp=unconfined"
     ],
     "extensions": [
         "ms-azuretools.vscode-docker",
