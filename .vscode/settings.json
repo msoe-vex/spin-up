@@ -22,6 +22,8 @@
         ".devcontainer/devcontainer.json"
     ],
     "cSpell.words": [
+        "COMMS",
+        "proto",
         "rclcpp"
     ],
     "files.associations": {

@@ -1,2 +1,6 @@
 # spin-up
-Raider Robotics repository for VEXU Spin Up
+Raider Robotics repository for VEXU Spin Up.
+
+
+
+# Commands
