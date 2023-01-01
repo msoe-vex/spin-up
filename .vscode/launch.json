@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "Launch Publisher Example",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/install/publisher_example/lib/publisher_example/publisher",
