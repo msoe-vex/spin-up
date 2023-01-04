@@ -3,14 +3,14 @@ Raider Robotics repository for VEXU Spin Up.
 
 ### Setup
 This repository is setup as a visual studio code dev container. To work on code:
-1. Install [Docker](https://www.docker.com/products/docker-desktop/).
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 2. Install [VS Code](https://code.visualstudio.com/). Note this is different from Visual Studio, which is purple, not blue.
 3. Add the Dev Containers extension.
 4. Open the command pallette using *Ctrl + Shift + P*, then search for *Dev Containers: Open Folder in Container* and select the folder containing this repository.
 
 ### Commands
-Use **Run and Debug** (*Ctrl + Shift + D*) to compile and run programs in debugging mode.
-Run `make` to compile everything.
-Run `make example` to compile *publisher_example*.
-Run `make run-example` to run *publisher_example*.
-Run `make clean` or `make purge` to cleanup generated files.
+* Use **Run and Debug** (*Ctrl + Shift + D*) to compile and run programs in debugging mode.
+* Run `make` to compile everything.
+* Run `make example` to compile *publisher_example*.
+* Run `make run-example` to run *publisher_example*.
+* Run `make clean` or `make purge` to cleanup generated files.
