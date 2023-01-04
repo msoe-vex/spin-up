@@ -1,9 +1,9 @@
 #include "diffdrive_arduino/arduino_comms.h"
+
 #include <cstdlib>
 #include <sstream>
 
 // #include <ros/console.h>
-
 void ArduinoComms::setup() {
   for (auto topic_name : l_topic_names_) {
     l_publishers_.push_back(this->create_publisher<std_msgs::msg::Float32>(

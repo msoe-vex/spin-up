@@ -17,24 +17,3 @@ AllowShortFunctionsOnASingleLine: All
 AllowShortLambdasOnASingleLine: All
 # There shouldn't be short empty loops, but fine
 AllowShortLoopsOnASingleLine: true
-
-# Remove semicolon after functions
-RemoveSemicolon: true
-
-IncludeBlocks: Merge
-IncludeCategories:
-  # Matches common headers first, but sorts them after project includes
-  - Regex: '\\".*\\"'
-    Priority: 5000
-  - Regex: "<.*>"
-    Priority: 1000
-
-# Format raw string literals with a `pb` or `proto` tag as proto.
-RawStringFormats:
-  - Language: TextProto
-    Delimiters:
-      - "pb"
-      - "proto"
-    BasedOnStyle: Google
-
-CommentPragmas: "(@copydoc)"
