@@ -1,16 +1,13 @@
-// Config for cpptools plugin
 {
     "configurations": [
         {
             "name": "Linux",
-            // will need to be updated for ros:humble
             "includePath": [
                 "${workspaceFolder}/**",
-                "/opt/ros/foxy/include/**"
+                "/opt/ros/humble/include/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
-            // "compileCommands": "${workspaceFolder}/build/compile_commands.json",
             "cppStandard": "c++17",
             "intelliSenseMode": "linux-gcc-x64"
         }

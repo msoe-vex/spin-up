@@ -9,5 +9,8 @@ This repository is setup as a visual studio code dev container. To work on code:
 4. Open the command pallette using *Ctrl + Shift + P*, then search for *Dev Containers: Open Folder in Container* and select the folder containing this repository.
 
 ### Commands
-Use **Run and Debug** (*Ctrl + Shift + D*) to launch and run programs.
-Run `make` to compile programs.
+Use **Run and Debug** (*Ctrl + Shift + D*) to compile and run programs in debugging mode.
+Run `make` to compile everything.
+Run `make example` to compile *publisher_example*.
+Run `make run-example` to run *publisher_example*.
+Run `make clean` or `make purge` to cleanup generated files.

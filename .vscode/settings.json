@@ -23,8 +23,10 @@
     ],
     "cSpell.words": [
         "COMMS",
+        "libeigen",
         "proto",
-        "rclcpp"
+        "rclcpp",
+        "rosdep"
     ],
     "files.associations": {
         "array": "cpp",

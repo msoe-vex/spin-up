@@ -1,10 +1,14 @@
-# We'll start with althack's dev enviornment
-FROM althack/ros2:foxy-dev
+# FROM althack/ros2:foxy-dev
+FROM althack/ros2:humble-dev
 
-# Set up auto-source of workspace for ros user
-# ARG WORKSPACE
-# RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/ros/.bashrc
 ARG WORKSPACE
-RUN echo "source ${WORKSPACE}/install/setup.bash" >> ~/.bashrc
+RUN apt-get update && apt-get install \
+    -y --no-install-recommends \
+    ros-humble-hardware-interface \
+    ros-humble-controller-manager \
+    && apt-get autoremove -y
 
-# RUN ${WORKSPACE}/scripts/setup.sh
+# Set up source of workspace for ros user
+RUN echo "source ${WORKSPACE}/install/setup.bash" >> ~/.bashrc
+# Alternative which puts a conditional in ./bashrc:
+# RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/ros/.bashrc

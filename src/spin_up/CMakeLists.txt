@@ -7,13 +7,13 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 
-add_executable(minimal_pub src/minimal_publisher.cpp)
-#add_executable(motor_test src/motor_test.cpp)
-ament_target_dependencies(minimal_pub rclcpp std_msgs)
+add_executable(minimal_publisher src/minimal_publisher.cpp)
+add_executable(motor_test src/motor_test.cpp)
+ament_target_dependencies(publisher_example rclcpp std_msgs)
 
 install(TARGETS
-  minimal_pub
-#  motor_test
+  publisher_example
+  # motor_test
   DESTINATION lib/${PROJECT_NAME}
 )
 

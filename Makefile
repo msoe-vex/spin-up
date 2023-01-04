@@ -14,6 +14,9 @@ all:
 example:
 	colcon build --packages-select publisher_example
 
+run-example:
+	ros2 run publisher_example publisher
+
 test:
 	source install/setup.bash
 	colcon test
@@ -27,4 +30,4 @@ purge:
 
 setup:
 	rosdep update
-	rosdep install --from-paths src -y
+	rosdep install -y --from-paths src
