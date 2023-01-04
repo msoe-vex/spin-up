@@ -95,9 +95,9 @@
     // Python stuff
     "python.envFile": "${workspaceFolder}/.env",
     "python.analysis.extraPaths": [
-        "/opt/ros/foxy/lib/python3.8/site-packages/"
+        "/opt/ros/humble/lib/python3.8/site-packages/"
     ],
     "python.autoComplete.extraPaths": [
-        "/opt/ros/foxy/lib/python3.8/site-packages/"
+        "/opt/ros/humble/lib/python3.8/site-packages/"
     ]
 }
