@@ -1,15 +1,9 @@
 #!/usr/bin/make -f
 SHELL = /bin/sh
 
-# Usage: 
-# make (or: make all)
-# make test
-# make clean
-# make purge
-# etc.
-
+# v5_hal is built by diffdrive_arduino?
 all: 
-	colcon build --packages-skip spin_up
+	colcon build
 
 example:
 	colcon build --packages-select publisher_example
