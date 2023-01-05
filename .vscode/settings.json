@@ -26,7 +26,8 @@
         "libeigen",
         "proto",
         "rclcpp",
-        "rosdep"
+        "rosdep",
+        "VEXU"
     ],
     "files.associations": {
         "array": "cpp",
