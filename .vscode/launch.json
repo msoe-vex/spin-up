@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Publisher Example",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/install/publisher_example/lib/publisher_example/publisher",
+            "args": [],
+            "preLaunchTask": "build example",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "internalConsoleOptions": "neverOpen",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+    ]
+}

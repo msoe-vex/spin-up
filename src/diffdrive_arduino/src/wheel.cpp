@@ -1,4 +1,5 @@
 #include "diffdrive_arduino/wheel.h"
+
 #include <cmath>
 
 Wheel::Wheel(const std::string& wheel_name, int counts_per_rev) {

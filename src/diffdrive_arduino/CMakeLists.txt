@@ -1,31 +1,27 @@
 cmake_minimum_required(VERSION 3.5)
 project(diffdrive_arduino)
 
-# Default to C++14
-if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
-endif()
-
-
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra)
-endif()
-
 find_package(ament_cmake REQUIRED)
+
 find_package(hardware_interface REQUIRED)
 find_package(controller_manager REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(pluginlib REQUIRED)
+
 find_package(v5_hal REQUIRED)
 
-add_library(diffdrive_arduino SHARED src/diffdrive_arduino.cpp src/wheel.cpp src/arduino_comms.cpp)
+add_library(diffdrive_arduino SHARED 
+  src/diffdrive_arduino.cpp
+  src/wheel.cpp
+  src/arduino_comms.cpp
+)
 
 target_include_directories(
-  diffdrive_arduino
-  PRIVATE
+  diffdrive_arduino PRIVATE
   include
 )
+
 ament_target_dependencies(
   diffdrive_arduino
   hardware_interface
@@ -38,8 +34,8 @@ ament_target_dependencies(
 
 pluginlib_export_plugin_description_file(hardware_interface robot_hardware.xml)
 
-install(
-  TARGETS diffdrive_arduino
+install(TARGETS
+  diffdrive_arduino
   DESTINATION lib
 )
 
@@ -51,6 +47,7 @@ install(
 ament_export_libraries(
   diffdrive_arduino
 )
+
 ament_export_dependencies(
   hardware_interface
   controller_manager
@@ -61,5 +58,3 @@ ament_export_dependencies(
 )
 
 ament_package()
-
-

@@ -1,0 +1,71 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "detail": "Build workspace (default)",
+            "type": "shell",
+            "command": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "build example",
+            "detail": "Build example",
+            "type": "shell",
+            "command": "make example",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "debug",
+            "detail": "Build workspace (debug)",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "env": {
+                    "BUILD_TYPE": "Debug"
+                }
+            },
+            "group": "build",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "test",
+            "detail": "Run all unit tests",
+            "type": "shell",
+            "command": "make test",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "clean",
+            "detail": "Cleanup generated files.",
+            "type": "shell",
+            "command": "make clean",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "purge",
+            "detail": "Delete all generated files.",
+            "type": "shell",
+            "command": "make purge",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "setup",
+            "detail": "Setup the workspace",
+            "type": "shell",
+            "command": "make setup",
+            "problemMatcher": []
+        },
+    ]
+}
