@@ -1,5 +1,0 @@
--
-  ros1_package_name: 'v5_hal'
-  ros1_message_name: 'V5Controller'
-  ros2_package_name: 'v5_hal'
-  ros2_message_name: 'V5Controller'

@@ -1,6 +1,6 @@
 // Docs: https://aka.ms/vscode-remote/devcontainer.json
 {
-    "dockerFile": "Dockerfile",
+    "dockerFile": "Dockerfile2",
     // Causes permission errors when running make (i.e. colcon build) without sudo?
     // "remoteUser": "ros",
     "build": {
