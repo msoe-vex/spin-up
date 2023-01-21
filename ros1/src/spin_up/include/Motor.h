@@ -1,26 +1,15 @@
 #pragma once
-#include <string>
 
-#include "MotorInterface.h"
-#include "main.hpp"
-
-class Motor : MotorInterface {
+class Motor {
  public:
-  Motor(int port_number, bool reverse, pros::motor_gearset_e_t gearset);
+  virtual void Move(int);
+  virtual void MoveVoltage(int);
+  virtual void MoveVelocity(int);
+  virtual void MoveAbsolute(double position, int max_velocity);
+};
 
-  void ResetEncoder();
-
-  void Move(int);
-  void MoveVoltage(int);
-  void MoveVelocity(float);
-  void MoveAbsolute(double position, int max_velocity) {
-
-    _motor.ahh();
-  }
-
-  // pretend getter
-  int _position();
-
- private:
-  pros::Motor _motor;
+class MotorAndEncoder : Motor {
+ public:
+  virtual void ResetEncoder();
+  virtual int _position();
 };
