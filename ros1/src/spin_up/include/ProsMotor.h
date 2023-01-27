@@ -1,9 +1,10 @@
 #pragma once
 #include <string>
 
+#include "main.h"
 #include "Motor.h"
 
-class ProsMotor : Motor {
+class ProsMotor : private Motor {
  public:
   ProsMotor(int port_number, bool reverse, pros::motor_gearset_e_t gearset);
 
@@ -12,11 +13,14 @@ class ProsMotor : Motor {
   void MoveVelocity(float);
   void MoveAbsolute(double position, int max_velocity);
 
- private:
+  int GetMaxRpm();
+
+ protected:
   pros::Motor _motor;
+  pros::motor_gearset_e_t _gearset;
 };
 
-class ProsMotorAndEncoder : ProsMotor {
+class ProsMotorAndEncoder : protected ProsMotor {
  public:
   void ResetEncoder();
   int _position();
