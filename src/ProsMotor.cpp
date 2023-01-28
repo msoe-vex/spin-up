@@ -1,4 +1,4 @@
-#include "../include/ProsMotor.h"
+#include "ProsMotor.h"
 
 ProsMotor::ProsMotor(
     int port_number, bool reverse, pros::motor_gearset_e_t gearset)
