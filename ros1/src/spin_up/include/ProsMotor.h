@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 
-#include "main.h"
 #include "Motor.h"
+#include "main.h"
 
 class ProsMotor : private Motor {
  public:
@@ -13,9 +13,9 @@ class ProsMotor : private Motor {
   void MoveVelocity(float);
   void MoveAbsolute(double position, int max_velocity);
 
+ protected:
   int GetMaxRpm();
 
- protected:
   pros::Motor _motor;
   pros::motor_gearset_e_t _gearset;
 };

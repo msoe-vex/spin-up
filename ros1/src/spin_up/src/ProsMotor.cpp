@@ -7,8 +7,8 @@ ProsMotor::ProsMotor(
 void ProsMotor::Move(int value) { _motor.move(value); }
 void ProsMotor::MoveVoltage(int voltage) { _motor.move_voltage(voltage); }
 void ProsMotor::MoveVelocity(float velocity) {
-  float rpm = (velocity / MAX_VELOCITY) * ProsMotor::GetMaxRpm();
-  _motor.move_velocity(rpm);
+  // float rpm = (velocity / MAX_VELOCITY) * ProsMotor::GetMaxRpm();
+  // _motor.move_velocity(rpm);
 }
 
 void ProsMotor::MoveAbsolute(double position, int max_velocity) {
