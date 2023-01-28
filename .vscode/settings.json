@@ -87,7 +87,8 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "typeindex": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "unordered_set": "cpp"
     },
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1000,
