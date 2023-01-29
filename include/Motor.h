@@ -11,5 +11,6 @@ class Motor {
 class MotorAndEncoder : Motor {
  public:
   virtual void ResetEncoder();
-  virtual int _position();
+  virtual int GetPosition();
+  virtual float GetVelocity();
 };

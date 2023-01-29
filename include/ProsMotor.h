@@ -3,6 +3,7 @@
 
 #include "Motor.h"
 #include "main.h"
+#include "Constants.h"
 
 class ProsMotor : private Motor {
  public:
@@ -17,11 +18,11 @@ class ProsMotor : private Motor {
   int GetMaxRpm();
 
   pros::Motor _motor;
-  pros::motor_gearset_e_t _gearset;
 };
 
 class ProsMotorAndEncoder : protected ProsMotor {
  public:
   void ResetEncoder();
-  int _position();
+  int GetPosition();
+  float GetVelocity();
 };
