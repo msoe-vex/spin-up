@@ -18,6 +18,7 @@ class ProsMotor : private Motor {
   int GetMaxRpm();
 
   pros::Motor _motor;
+
 };
 
 class ProsMotorAndEncoder : protected ProsMotor {
