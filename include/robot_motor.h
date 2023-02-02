@@ -1,21 +1,21 @@
 #pragma once
 #include <vector>
 
-#include "Motor.h"
-#include "RobotPort.h"
+#include "motor.h"
+#include "robot_port.h"
 
 /**
  * Factory functions for retriving Motors on the robot.
  */
-namespace RobotMotor {
+namespace robotmotor {
 struct DrivetrainMotors {
-  Motor front_right;
-  Motor back_right;
-  Motor back_left;
-  Motor front_left;
+  Motor front_right_motor;
+  Motor back_right_motor;
+  Motor back_left_motor;
+  Motor front_left_motor;
 };
 DrivetrainMotors get_drivetrain_motors();
 
 MotorAndEncoder get_shooter_motor();
 Motor get_transfer_motor();
-}  // namespace RobotMotor
+}  // namespace robotmotor

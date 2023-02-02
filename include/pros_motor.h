@@ -1,10 +1,11 @@
 #pragma once
 #include <string>
 
-#include "Motor.h"
-#include "RobotConstant.h"
 #include "main.h"
+#include "motor.h"
+#include "robot_constant.h"
 
+namespace prosmotor {
 class ProsMotor : private Motor {
  public:
   ProsMotor(int port_number, bool reverse, pros::motor_gearset_e_t gearset);
@@ -17,7 +18,7 @@ class ProsMotor : private Motor {
  protected:
   int GetMaxRpm();
 
-  pros::Motor _motor;
+  pros::Motor motor_;
 };
 
 class ProsMotorAndEncoder : protected ProsMotor {
@@ -26,3 +27,4 @@ class ProsMotorAndEncoder : protected ProsMotor {
   int GetPosition();
   float GetVelocity();
 };
+}  // namespace prosmotor

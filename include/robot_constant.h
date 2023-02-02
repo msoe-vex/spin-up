@@ -1,9 +1,9 @@
 #pragma once
 
-namespace RobotConstant {
+namespace robotconstant {
 float kMaxVelocity = 50.0f;  // in/s
 
-}  // namespace RobotConstant
+}  // namespace robotconstant
 
 /*#ifndef _CONSTANTS_H_
 #define _CONSTANTS_H_
