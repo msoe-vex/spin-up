@@ -12,7 +12,7 @@ class Motor {
 class MotorAndEncoder : Motor {
  public:
   virtual void ResetEncoder();
-  virtual int GetPosition() const;
-  virtual float GetVelocity() const;
+  virtual int GetPosition();
+  virtual float GetVelocity();
 };
 }  // namespace interface

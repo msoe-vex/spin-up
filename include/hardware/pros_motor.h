@@ -7,6 +7,12 @@
 #include "main.h"
 
 namespace hardware {
+struct ProsMotorDefinition {
+  int port_number;
+  bool reverse;
+  ProsMotorDefinition(int port_number, bool reverse = false);
+};
+
 class ProsMotor : virtual private interface::Motor {
  public:
   ProsMotor(int port_number, bool reverse, pros::motor_gearset_e_t);

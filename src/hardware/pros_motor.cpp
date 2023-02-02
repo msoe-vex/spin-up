@@ -30,6 +30,7 @@ void ProsMotor::MoveVelocity(float velocity) {
 void ProsMotor::MoveAbsolute(double position, int max_velocity) {
   motor_.move_absolute(position, max_velocity);
 }
+
 int ProsMotor::GetMaxRpm() {
   // assume all gearing is the same
   switch (motor_.get_gearing()[0]) {
