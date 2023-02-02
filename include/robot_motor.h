@@ -2,7 +2,7 @@
 #include <vector>
 
 #include "motor.h"
-#include "robot_port.h"
+#include "robot_constant.h"
 
 /**
  * Factory functions for retriving Motors on the robot.

@@ -3,8 +3,6 @@
 #include "robot_port.h"
 
 namespace robotconstant {
-float kMaxVelocity = 50.0f;  // in/s
-
 // clockwise around the robot
 robotport::DrivetrainMotorPort kDrivertrainFrontRightPort{1, 2};
 robotport::DrivetrainMotorPort kDrivetrainBackRightPort{3, 4};
@@ -16,6 +14,7 @@ robotport::TransferMotorPort kTransferPort{11, 12};
 
 
 
+float kMaxVelocity = 50.0f;  // in/s
 }  // namespace robotconstant
 
 /*#ifndef _CONSTANTS_H_
