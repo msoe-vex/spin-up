@@ -10,25 +10,22 @@
  */
 namespace constant {
 struct DrivetrainMotors {
-  interface::Motor front_right_motor;
-  interface::Motor back_right_motor;
-  interface::Motor back_left_motor;
-  interface::Motor front_left_motor;
+  // declared in clockwise fashion
+  Motor front_right_motor;
+  Motor back_right_motor;
+  Motor back_left_motor;
+  Motor front_left_motor;
 };
-const DrivetrainMotors kDrivetrainMotors;
 
-namespace {
-const pros::motor_gearset_e_t kDrivetrainGearset;
-const std::vector<bool> kDrivetrainReverse;
+DrivetrainMotors GetDrivetrainMotors();
+// interface::MotorAndEncoder GetShooterMotor();
+// interface::Motor GetTransferMotor();
+
+const pros::motor_gearset_e_t kDrivetrainGearset = pros::E_MOTOR_GEAR_BLUE;
+const std::vector<bool> kDrivetrainReverse = {false, true};
 // {top motor, bottom motor}
-const std::vector<int> kFrontRightMotorPorts;
-const std::vector<int> kBackRightMotorPorts;
-const std::vector<int> kBackLeftMotorPorts;
-const std::vector<int> kFrontLeftMotorPorts;
-
-constexpr constant::DrivetrainMotors GetDrivetrainMotors();
-
-// constexpr interface::MotorAndEncoder GetShooterMotor();
-// constexpr interface::Motor GetTransferMotor();
-}  // namespace
+const std::vector<int> kFrontRightMotorPorts = {1, 2};
+const std::vector<int> kBackRightMotorPorts = {3, 4};
+const std::vector<int> kBackLeftMotorPorts = {5, 6};
+const std::vector<int> kFrontLeftMotorPorts = {7, 8};
 }  // namespace constant
