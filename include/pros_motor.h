@@ -16,7 +16,7 @@ class ProsMotor : private Motor {
   void MoveAbsolute(double position, int max_velocity);
 
  protected:
-  int GetMaxRpm();
+  int GetMaxRpm() const;
 
   pros::Motor motor_;
 };
@@ -24,7 +24,7 @@ class ProsMotor : private Motor {
 class ProsMotorAndEncoder : protected ProsMotor {
  public:
   void ResetEncoder();
-  int GetPosition();
-  float GetVelocity();
+  int GetPosition() const;
+  float GetVelocity() const;
 };
 }  // namespace prosmotor

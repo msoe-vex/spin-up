@@ -14,7 +14,7 @@ void ProsMotor::MoveVelocity(float velocity) {
 void ProsMotor::MoveAbsolute(double position, int max_velocity) {
   motor_.move_absolute(position, max_velocity);
 }
-int ProsMotor::GetMaxRpm() {
+int ProsMotor::GetMaxRpm() const {
   switch (motor_.get_gearing()) {
     case pros::E_MOTOR_GEARSET_06:
       return 600;
@@ -28,8 +28,8 @@ int ProsMotor::GetMaxRpm() {
 }
 
 void ProsMotorAndEncoder::ResetEncoder() { motor_.tare_position(); }
-int ProsMotorAndEncoder::GetPosition() { return motor_.get_position(); }
-float ProsMotorAndEncoder::GetVelocity() {
+int ProsMotorAndEncoder::GetPosition() const { return motor_.get_position(); }
+float ProsMotorAndEncoder::GetVelocity() const {
   float rpm = motor_.get_actual_velocity();
   return (rpm / ProsMotorAndEncoder::GetMaxRpm()) * robotconstant::kMaxVelocity;
 }

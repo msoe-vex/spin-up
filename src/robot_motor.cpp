@@ -2,7 +2,7 @@
 
 namespace robotmotor {
 // TODO : Implement
-// access robotport::kDrivetrain...Port, init motor object,
+// access robotconstant::kDrivetrain...Port, init motor object,
 // and construct and return DrivetrainMotors struct
 DrivetrainMotors GetDrivetrainMotors() {}
 
