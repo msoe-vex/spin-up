@@ -1,12 +1,28 @@
 #include "robot_motor.h"
 
-namespace robotmotor {
-// TODO : Implement
-// access robotconstant::kDrivetrain...Port, init motor object,
-// and construct and return DrivetrainMotors struct
-DrivetrainMotors GetDrivetrainMotors() {}
+namespace robot {
+pros::motor_gearset_e_t kDrivetrainGearset = pros::E_MOTOR_GEAR_BLUE;
+std::vector<bool> kDrivetrainReverse = {false, true};
+// {top motor, bottom motor}
+std::vector<int> kFrontRightMotorPorts = {1, 2};
+std::vector<int> kBackRightMotorPorts = {4, 5};
+std::vector<int> kBackLeftMotorPorts = {6, 7};
+std::vector<int> kFrontLeftMotorPorts = {3, 4};
 
-MotorAndEncoder GetShooterMotor() {}
+DrivetrainMotors GetDrivetrainMotors() {
+  //   return {
+  //   hardware::ProsMotor(
+  //       kFrontRightMotorPorts, kDrivetrainReverse, kDrivetrainGearset),
+  //   hardware::ProsMotor(
+  //       kBackRightMotorPorts, kDrivetrainReverse, kDrivetrainGearset),
+  //   hardware::ProsMotor(
+  //       kBackLeftMotorPorts, kDrivetrainReverse, kDrivetrainGearset),
+  //   hardware::ProsMotor(
+  //       kFrontLeftMotorPorts, kDrivetrainReverse, kDrivetrainGearset)};
+  //   };
+}
 
-Motor GetTransferMotor() {}
-}  // namespace robotmotor
+interface::MotorAndEncoder GetShooterMotor() {}
+
+interface::Motor GetTransferMotor() {}
+}  // namespace robot

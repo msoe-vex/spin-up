@@ -1,5 +1,6 @@
 #pragma once
 
+namespace interface {
 class Motor {
  public:
   virtual void Move(int);
@@ -14,3 +15,4 @@ class MotorAndEncoder : Motor {
   virtual int GetPosition() const;
   virtual float GetVelocity() const;
 };
+}  // namespace interface

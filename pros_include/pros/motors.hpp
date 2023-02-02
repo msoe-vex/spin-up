@@ -28,72 +28,75 @@
 
 namespace pros {
 class Motor {
-	public:
-	/**
-	 * Creates a Motor object for the given port and specifications.
-	 *
-	 * This function uses the following values of errno when an error state is
-	 * reached:
-	 * ENXIO - The given value is not within the range of V5 ports (1-21).
-	 * ENODEV - The port cannot be configured as a motor
-	 *
-	 * \param port
-	 *        The V5 port number from 1-21
-	 * \param gearset
-	 *        The motor's gearset
-	 * \param reverse
-	 *        True reverses the motor, false is default
-	 * \param encoder_units
-	 *        The motor's encoder units
-	 */
-	explicit Motor(const std::int8_t port, const motor_gearset_e_t gearset, const bool reverse,
-	               const motor_encoder_units_e_t encoder_units);
+ public:
+  /**
+   * Creates a Motor object for the given port and specifications.
+   *
+   * This function uses the following values of errno when an error state is
+   * reached:
+   * ENXIO - The given value is not within the range of V5 ports (1-21).
+   * ENODEV - The port cannot be configured as a motor
+   *
+   * \param port
+   *        The V5 port number from 1-21
+   * \param gearset
+   *        The motor's gearset
+   * \param reverse
+   *        True reverses the motor, false is default
+   * \param encoder_units
+   *        The motor's encoder units
+   */
+  explicit Motor(
+      const std::int8_t port, const motor_gearset_e_t gearset,
+      const bool reverse, const motor_encoder_units_e_t encoder_units);
 
-	explicit Motor(const std::int8_t port, const motor_gearset_e_t gearset, const bool reverse);
+  explicit Motor(
+      const std::int8_t port, const motor_gearset_e_t gearset,
+      const bool reverse);
 
-	explicit Motor(const std::int8_t port, const motor_gearset_e_t gearset);
+  explicit Motor(const std::int8_t port, const motor_gearset_e_t gearset);
 
-	explicit Motor(const std::int8_t port, const bool reverse);
+  explicit Motor(const std::int8_t port, const bool reverse);
 
-	explicit Motor(const std::int8_t port);
+  explicit Motor(const std::int8_t port);
 
-	/****************************************************************************/
-	/**                         Motor movement functions                       **/
-	/**                                                                        **/
-	/**          These functions allow programmers to make motors move         **/
-	/****************************************************************************/
-	/**
-	 * Sets the voltage for the motor from -128 to 127.
-	 *
-	 * This is designed to map easily to the input from the controller's analog
-	 * stick for simple opcontrol use. The actual behavior of the motor is
-	 * analogous to use of pros::Motor::move(), or motorSet from the PROS 2 API.
-	 *
-	 * This function uses the following values of errno when an error state is
-	 * reached:
-	 * ENODEV - The port cannot be configured as a motor
-	 *
-	 * \param voltage
-	 *        The new motor voltage from -127 to 127
-	 *
-	 * \return 1 if the operation was successful or PROS_ERR if the operation
-	 * failed, setting errno.
-	 */
-	virtual std::int32_t operator=(std::int32_t voltage) const;
+  /****************************************************************************/
+  /**                         Motor movement functions                       **/
+  /**                                                                        **/
+  /**          These functions allow programmers to make motors move         **/
+  /****************************************************************************/
+  /**
+   * Sets the voltage for the motor from -128 to 127.
+   *
+   * This is designed to map easily to the input from the controller's analog
+   * stick for simple opcontrol use. The actual behavior of the motor is
+   * analogous to use of pros::Motor::move(), or motorSet from the PROS 2 API.
+   *
+   * This function uses the following values of errno when an error state is
+   * reached:
+   * ENODEV - The port cannot be configured as a motor
+   *
+   * \param voltage
+   *        The new motor voltage from -127 to 127
+   *
+   * \return 1 if the operation was successful or PROS_ERR if the operation
+   * failed, setting errno.
+   */
+  virtual std::int32_t operator=(std::int32_t voltage) const;
 
-	/**
-	 * Sets the voltage for the motor from -127 to 127.
-	 *
-	 * This is designed to map easily to the input from the controller's analog
-	 * stick for simple opcontrol use. The actual behavior of the motor is
-	 * analogous to use of motor_move(), or motorSet() from the PROS 2 API.
-	 *
-	 * This function uses the following values of errno when an error state is
-	 * reached:
-	 * ENODEV - The port cannot be configured as a motor
-	 *
-	 * \param voltage
-	 *        The new motor voltage from -127 to 127
+  /**
+   * Sets the voltage for the motor from -127 to 127.
+   *
+   * This is designed to map easily to the input from the controller's analog
+   * stick for simple opcontrol use. The actual behavior of the motor is
+   * analogous to use of motor_move(), or motorSet() from the PROS 2 API.
+   *
+   * This function uses the following values of errno when an error state is
+   * reached:
+   * ENODEV - The port cannot be configured as a motor
+   *
+   * \param voltage
+   *        The new motor voltage from -127 to 127
 	 *
 	 * \return 1 if the operation was successful or PROS_ERR if the operation
 	 * failed, setting errno.
