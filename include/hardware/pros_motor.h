@@ -2,12 +2,12 @@
 #include <cstdint>
 #include <vector>
 
+#include "constants/constants.h"
 #include "interface/motor.h"
 #include "main.h"
-#include "robot/constant.h"
 
 namespace hardware {
-class ProsMotor : private interface::Motor {
+class ProsMotor : virtual private interface::Motor {
  public:
   ProsMotor(int port_number, bool reverse, pros::motor_gearset_e_t);
   ProsMotor(
@@ -27,8 +27,8 @@ class ProsMotor : private interface::Motor {
   std::vector<std::int8_t> FlipPortNumbers(std::vector<int>, std::vector<bool>);
 };
 
-class ProsMotorAndEncoder : private interface::MotorAndEncoder,
-                            protected ProsMotor {
+class ProsMotorAndEncoder : protected ProsMotor,
+                            virtual private interface::MotorAndEncoder {
  public:
   void ResetEncoder();
   int GetPosition();

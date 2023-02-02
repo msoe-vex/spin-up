@@ -1,14 +1,14 @@
 #pragma once
 #include <vector>
 
-#include "main.h"
-#include "interface/motor.h"
 #include "hardware/pros_motor.h"
+#include "interface/motor.h"
+#include "main.h"
 
 /**
  * Factory functions for retriving Motors on the robot.
  */
-namespace robot {
+namespace constants {
 struct DrivetrainMotors {
   interface::Motor front_right_motor;
   interface::Motor back_right_motor;
@@ -19,4 +19,4 @@ DrivetrainMotors GetDrivetrainMotors();
 
 interface::MotorAndEncoder GetShooterMotor();
 interface::Motor GetTransferMotor();
-}  // namespace robot
+}  // namespace constants

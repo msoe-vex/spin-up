@@ -1,4 +1,4 @@
-#include "pros_motor.h"
+#include "hardware/pros_motor.h"
 
 namespace hardware {
 ProsMotor::ProsMotor(
@@ -24,7 +24,7 @@ std::vector<std::int8_t> ProsMotor::FlipPortNumbers(
 void ProsMotor::Move(int value) { motor_.move(value); }
 void ProsMotor::MoveVoltage(int voltage) { motor_.move_voltage(voltage); }
 void ProsMotor::MoveVelocity(float velocity) {
-  float rpm = (velocity / robot::kMaxVelocity) * GetMaxRpm();
+  float rpm = (velocity / constants::kMaxVelocity) * GetMaxRpm();
   motor_.move_velocity(rpm);
 }
 void ProsMotor::MoveAbsolute(double position, int max_velocity) {
@@ -48,6 +48,6 @@ void ProsMotorAndEncoder::ResetEncoder() { motor_.tare_position(); }
 int ProsMotorAndEncoder::GetPosition() { return motor_.get_positions()[0]; }
 float ProsMotorAndEncoder::GetVelocity() {
   float rpm = motor_.get_actual_velocities()[0];
-  return (rpm / ProsMotorAndEncoder::GetMaxRpm()) * robot::kMaxVelocity;
+  return (rpm / ProsMotorAndEncoder::GetMaxRpm()) * constants::kMaxVelocity;
 }
 }  // namespace hardware
