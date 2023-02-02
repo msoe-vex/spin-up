@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <vector>
 
-#include "constants/constants.h"
+#include "constant/constants.h"
 #include "interface/motor.h"
 #include "main.h"
 
@@ -13,7 +13,7 @@ struct ProsMotorDefinition {
   ProsMotorDefinition(int port_number, bool reverse = false);
 };
 
-class ProsMotor : virtual private interface::Motor {
+class ProsMotor : virtual public interface::Motor {
  public:
   ProsMotor(int port_number, bool reverse, pros::motor_gearset_e_t);
   ProsMotor(
@@ -34,7 +34,7 @@ class ProsMotor : virtual private interface::Motor {
 };
 
 class ProsMotorAndEncoder : protected ProsMotor,
-                            virtual private interface::MotorAndEncoder {
+                            virtual public interface::MotorAndEncoder {
  public:
   void ResetEncoder();
   int GetPosition();

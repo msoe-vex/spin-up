@@ -24,7 +24,7 @@ std::vector<std::int8_t> ProsMotor::FlipPortNumbers(
 void ProsMotor::Move(int value) { motor_.move(value); }
 void ProsMotor::MoveVoltage(int voltage) { motor_.move_voltage(voltage); }
 void ProsMotor::MoveVelocity(float velocity) {
-  float rpm = (velocity / constants::kMaxVelocity) * GetMaxRpm();
+  float rpm = (velocity / constant::kMaxVelocity) * GetMaxRpm();
   motor_.move_velocity(rpm);
 }
 void ProsMotor::MoveAbsolute(double position, int max_velocity) {
@@ -49,6 +49,6 @@ void ProsMotorAndEncoder::ResetEncoder() { motor_.tare_position(); }
 int ProsMotorAndEncoder::GetPosition() { return motor_.get_positions()[0]; }
 float ProsMotorAndEncoder::GetVelocity() {
   float rpm = motor_.get_actual_velocities()[0];
-  return (rpm / ProsMotorAndEncoder::GetMaxRpm()) * constants::kMaxVelocity;
+  return (rpm / ProsMotorAndEncoder::GetMaxRpm()) * constant::kMaxVelocity;
 }
 }  // namespace hardware

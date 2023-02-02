@@ -1,10 +1,9 @@
 #pragma once
 
-namespace constants {
+namespace constant {
 float kMaxVelocity = 50.0f;  // in/s
 
-
-}  // namespace constants
+}  // namespace constant
 
 /*#ifndef _CONSTANTS_H_
 #define _CONSTANTS_H_
