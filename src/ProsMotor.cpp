@@ -7,7 +7,7 @@ ProsMotor::ProsMotor(
 void ProsMotor::Move(int value) { _motor.move(value); }
 void ProsMotor::MoveVoltage(int voltage) { _motor.move_voltage(voltage); }
 void ProsMotor::MoveVelocity(float velocity) {
-  float rpm = (velocity / kMaxVelocity) * GetMaxRpm();
+  float rpm = (velocity / RobotConstant::kMaxVelocity) * GetMaxRpm();
   _motor.move_velocity(rpm);
 }
 void ProsMotor::MoveAbsolute(double position, int max_velocity) {
@@ -29,5 +29,5 @@ void ProsMotorAndEncoder::ResetEncoder() { _motor.tare_position(); }
 int ProsMotorAndEncoder::GetPosition() { return _motor.get_position(); }
 float ProsMotorAndEncoder::GetVelocity() {
   float rpm = _motor.get_actual_velocity();
-  return (rpm / GetMaxRpm()) * kMaxVelocity;
+  return (rpm / GetMaxRpm()) * RobotConstant::kMaxVelocity;
 }

@@ -2,8 +2,8 @@
 #include <string>
 
 #include "Motor.h"
+#include "RobotConstant.h"
 #include "main.h"
-#include "Constants.h"
 
 class ProsMotor : private Motor {
  public:
@@ -18,7 +18,6 @@ class ProsMotor : private Motor {
   int GetMaxRpm();
 
   pros::Motor _motor;
-
 };
 
 class ProsMotorAndEncoder : protected ProsMotor {
