@@ -1,7 +1,20 @@
 #pragma once
 
+#include "robot_port.h"
+
 namespace robotconstant {
 float kMaxVelocity = 50.0f;  // in/s
+
+// clockwise around the robot
+robotport::DrivetrainMotorPort kDrivertrainFrontRightPort{1, 2};
+robotport::DrivetrainMotorPort kDrivetrainBackRightPort{3, 4};
+robotport::DrivetrainMotorPort kDrivetrainBackLeftPort{5, 6};
+robotport::DrivetrainMotorPort kDrivetrainFrontLeftPort{7, 8};
+
+robotport::ShooterMotorPort kShooterPort{9, 10};
+robotport::TransferMotorPort kTransferPort{11, 12};
+
+
 
 }  // namespace robotconstant
 

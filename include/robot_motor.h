@@ -14,8 +14,8 @@ struct DrivetrainMotors {
   Motor back_left_motor;
   Motor front_left_motor;
 };
-DrivetrainMotors get_drivetrain_motors();
+DrivetrainMotors GetDrivetrainMotors();
 
-MotorAndEncoder get_shooter_motor();
-Motor get_transfer_motor();
+MotorAndEncoder GetShooterMotor();
+Motor GetTransferMotor();
 }  // namespace robotmotor
