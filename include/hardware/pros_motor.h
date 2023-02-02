@@ -2,11 +2,9 @@
 #include <cstdint>
 #include <vector>
 
+#include "interface/motor.h"
 #include "main.h"
-#include "motor.h"
-#include "robot_constant.h"
-
-namespace {}  // namespace
+#include "robot/constant.h"
 
 namespace hardware {
 class ProsMotor : private interface::Motor {

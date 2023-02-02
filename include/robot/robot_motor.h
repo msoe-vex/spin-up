@@ -2,8 +2,8 @@
 #include <vector>
 
 #include "main.h"
-#include "motor.h"
-#include "pros_motor.h"
+#include "interface/motor.h"
+#include "hardware/pros_motor.h"
 
 /**
  * Factory functions for retriving Motors on the robot.
