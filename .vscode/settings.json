@@ -9,7 +9,8 @@
         "**/*.code-search": true,
         "**/build": true,
         "**/install": true,
-        "**/log": true
+        "**/log": true,
+        "**/pros_include": true
     },
     "cSpell.allowCompoundWords": true,
     "cSpell.ignorePaths": [
@@ -88,7 +89,16 @@
         "thread": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "unordered_set": "cpp"
+        "unordered_set": "cpp",
+        "strstream": "cpp",
+        "bitset": "cpp",
+        "codecvt": "cpp",
+        "complex": "cpp",
+        "iomanip": "cpp",
+        "cfenv": "cpp",
+        "cinttypes": "cpp",
+        "valarray": "cpp",
+        "variant": "cpp"
     },
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1000,
