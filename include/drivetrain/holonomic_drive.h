@@ -1,21 +1,35 @@
 #pragma once
-#include "interface/holonomic_drivetrain_motors.h"
+#include <vector>
+
+#include "hardware/pros_motor_group.h"
+#include "interface/motor.h"
 
 namespace drivetrain {
-interface::HolonomicDrivetrainMotors GetHolonomicDrivetrainMotors();
+class HolonomicDrivetrainMotors {
+ public:
+  HolonomicDrivetrainMotors(
+      interface::Motor front_right_motor, interface::Motor back_right_motor,
+      interface::Motor back_left_motor, interface::Motor front_left_motor)
+      : drivetrain_motors_(
+            {front_right_motor, back_right_motor, back_left_motor,
+             front_left_motor}) {}
+
+ private:
+  std::vector<interface::Motor> drivetrain_motors_;
+};
 
 class HolonomicDrive {
  public:
-  HolonomicDrive(interface::HolonomicDrivetrainMotors drivetrain_motors)
+  HolonomicDrive(HolonomicDrivetrainMotors drivetrain_motors)
       : drivetrain_motors_(drivetrain_motors) {}
 
  protected:
-  inline interface::HolonomicDrivetrainMotors& drivetrain_motors() {
+  inline HolonomicDrivetrainMotors& drivetrain_motors() {
     return drivetrain_motors_;
   }
 
  private:
-  interface::HolonomicDrivetrainMotors drivetrain_motors_;
+  HolonomicDrivetrainMotors drivetrain_motors_;
 };
 
 /**
@@ -23,8 +37,8 @@ class HolonomicDrive {
  */
 class FieldOrientedHolonomicDrive : public HolonomicDrive {};
 
-class HolonomicDirectDrive : public HolonomicDrive {};
-
-class TankDrive {};
-
+class HolonomicDirectDrive : virtual public HolonomicDrive {
+ public:
+ 
+};
 }  // namespace drivetrain
