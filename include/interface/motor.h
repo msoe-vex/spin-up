@@ -8,11 +8,4 @@ class Motor {
   virtual void MoveVelocity(int);
   virtual void MoveAbsolute(double position, int max_velocity);
 };
-
-class MotorAndEncoder : Motor {
- public:
-  virtual void ResetEncoder();
-  virtual int GetPosition();
-  virtual float GetVelocity();
-};
 }  // namespace interface
