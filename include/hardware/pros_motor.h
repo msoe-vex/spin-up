@@ -27,10 +27,12 @@ class ProsMotor : virtual public interface::Motor {
 
  protected:
   int GetMaxRpm();
-  pros::MotorGroup motor_;
+  inline pros::MotorGroup& motor() { return motor_; }
 
  private:
   std::vector<std::int8_t> FlipPortNumbers(std::vector<int>, std::vector<bool>);
+
+  pros::MotorGroup motor_;
 };
 
 class ProsMotorAndEncoder : protected ProsMotor,

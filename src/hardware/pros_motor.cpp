@@ -9,7 +9,7 @@ ProsMotor::ProsMotor(
     std::vector<int> port_numbers, std::vector<bool> reverse,
     pros::motor_gearset_e_t gearset)
     : motor_(ProsMotor::FlipPortNumbers(port_numbers, reverse)) {
-  motor_.set_gearing(gearset);
+  motor().set_gearing(gearset);
 }
 
 std::vector<std::int8_t> ProsMotor::FlipPortNumbers(
@@ -21,19 +21,19 @@ std::vector<std::int8_t> ProsMotor::FlipPortNumbers(
   return result;
 }
 
-void ProsMotor::Move(int value) { motor_.move(value); }
-void ProsMotor::MoveVoltage(int voltage) { motor_.move_voltage(voltage); }
+void ProsMotor::Move(int value) { ProsMotor::motor().move(value); }
+void ProsMotor::MoveVoltage(int voltage) { motor().move_voltage(voltage); }
 void ProsMotor::MoveVelocity(float velocity) {
   float rpm = (velocity / constant::kMaxVelocity) * GetMaxRpm();
-  motor_.move_velocity(rpm);
+  motor().move_velocity(rpm);
 }
 void ProsMotor::MoveAbsolute(double position, int max_velocity) {
-  motor_.move_absolute(position, max_velocity);
+  motor().move_absolute(position, max_velocity);
 }
 
 int ProsMotor::GetMaxRpm() {
   // assume all gearing is the same
-  switch (motor_.get_gearing()[0]) {
+  switch (motor().get_gearing()[0]) {
     case pros::E_MOTOR_GEARSET_06:
       return 600;
     case pros::E_MOTOR_GEARSET_18:
@@ -45,10 +45,10 @@ int ProsMotor::GetMaxRpm() {
   }
 }
 
-void ProsMotorAndEncoder::ResetEncoder() { motor_.tare_position(); }
-int ProsMotorAndEncoder::GetPosition() { return motor_.get_positions()[0]; }
+void ProsMotorAndEncoder::ResetEncoder() { motor().tare_position(); }
+int ProsMotorAndEncoder::GetPosition() { return motor().get_positions()[0]; }
 float ProsMotorAndEncoder::GetVelocity() {
-  float rpm = motor_.get_actual_velocities()[0];
+  float rpm = motor().get_actual_velocities()[0];
   return (rpm / ProsMotorAndEncoder::GetMaxRpm()) * constant::kMaxVelocity;
 }
 }  // namespace hardware
