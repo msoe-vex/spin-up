@@ -22,7 +22,7 @@ class ProsMotorGroup : virtual public interface::Motor,
   void MoveAbsolute(double position, int max_velocity);
 
   void ResetEncoder();
-  int GetPosition();
+  double GetPosition();
   float GetVelocity();
 
  private:

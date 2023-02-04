@@ -17,7 +17,7 @@ void ProsMotor::MoveAbsolute(double position, int max_velocity) {
 
 void ProsMotor::ResetEncoder() { motor().tare_position(); }
 
-int ProsMotor::GetPosition() { return motor().get_position(); }
+double ProsMotor::GetPosition() { return motor().get_position(); }
 float ProsMotor::GetVelocity() {
   float rpm = motor().get_actual_velocity();
   return (rpm / GetMaxRpm()) * constant::kMaxVelocity;

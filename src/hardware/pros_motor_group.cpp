@@ -22,8 +22,8 @@ void ProsMotorGroup::MoveAbsolute(double position, int max_velocity) {
 
 void ProsMotorGroup::ResetEncoder() { motors().tare_position(); }
 
-int ProsMotorGroup::GetPosition() {
-  std::vector<int> positions = motors().get_positions();
+double ProsMotorGroup::GetPosition() {
+  std::vector<double> positions = motors().get_positions();
   return std::reduce(positions.begin(), positions.end()) / positions.size();
 }
 float ProsMotorGroup::GetVelocity() {

@@ -2,6 +2,8 @@
 #include <vector>
 
 #include "drivetrain/holonomic_drive.h"
+#include "hardware/pros_controller.h"
+#include "interface/controller.h"
 #include "main.h"
 
 namespace constant {
@@ -24,5 +26,9 @@ drivetrain::HolonomicDrivetrainMotors GetHolonomicDrivetrainMotors() {
           kBackLeftMotorPorts, kDrivetrainReverse, kDrivetrainGearset),
       hardware::ProsMotorGroup(
           kFrontLeftMotorPorts, kDrivetrainReverse, kDrivetrainGearset));
+}
+
+interface::Controller GetMasterController() {
+  return hardware::ProsController(pros::E_CONTROLLER_MASTER);
 }
 }  // namespace constant

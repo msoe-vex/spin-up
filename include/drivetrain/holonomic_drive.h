@@ -2,6 +2,7 @@
 #include <vector>
 
 #include "hardware/pros_motor_group.h"
+#include "interface/controller.h"
 #include "interface/motor.h"
 
 namespace drivetrain {
@@ -14,7 +15,17 @@ class HolonomicDrivetrainMotors {
             {front_right_motor, back_right_motor, back_left_motor,
              front_left_motor}) {}
 
+ public:
+  inline void SetVoltages(const std::vector<int>& voltages) {
+    for (int i = 0; i < voltages.size(); ++i) {
+      drivetrain_motors()[i].MoveVoltage(voltages[i]);
+    }
+  };
+
  private:
+  inline std::vector<interface::Motor>& drivetrain_motors() {
+    return drivetrain_motors_;
+  }
   std::vector<interface::Motor> drivetrain_motors_;
 };
 
@@ -39,6 +50,8 @@ class FieldOrientedHolonomicDrive : public HolonomicDrive {};
 
 class HolonomicDirectDrive : virtual public HolonomicDrive {
  public:
- 
+ using HolonomicDrive::HolonomicDrive; // constructor inheritance
+
+  void Drive(interface::Controller);
 };
 }  // namespace drivetrain

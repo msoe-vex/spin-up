@@ -1,9 +1,9 @@
 #pragma once
 
 namespace constant {
-float kMaxVelocity = 50.0f;  // in/s
-
-
+float kMaxVelocity = 50.0f;            // Max robot velocity in in/s
+int kProsMaxMotorVoltage = 12000;      // Max voltage value for a motor
+float kProsMaxJoystickAnalog = 127.0;  // Max value of a controller stick
 }  // namespace constant
 
 /*#ifndef _CONSTANTS_H_
@@ -11,8 +11,7 @@ float kMaxVelocity = 50.0f;  // in/s
 
 #define PUBLISH_DELAY_MS 20
 #define BALL_PRESENT_THRESHOLD 2700 // Threshold for Indexing Sensor to detect
-ball #define MAX_MOTOR_VOLTAGE 12000 // Max voltage value for a motor #define
-DELAY_TIME_MILLIS 10 // Standard delay time used in NodeManager
+ball #define DELAY_TIME_MILLIS 10 // Standard delay time used in NodeManager
 
 // Offset to apply to get the gyro into our correct frame of reference
 // Forward is M_PI_2, so we rotate the gyro angle to match
