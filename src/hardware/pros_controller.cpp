@@ -4,7 +4,7 @@
 
 namespace hardware {
 pros::controller_analog_e_t GetProsJoystick(
-    interface::ControllerJoystick joystick) {
+    enum interface::ControllerJoystick joystick) {
   switch (joystick) {
     case interface::ControllerJoystick::kLeftX:
       return pros::E_CONTROLLER_ANALOG_LEFT_X;
@@ -18,12 +18,13 @@ pros::controller_analog_e_t GetProsJoystick(
   throw std::invalid_argument("Expected a convertible joystick.");
 }
 
-int ProsController::GetAnalog(interface::ControllerJoystick joystick) {
+int ProsController::GetAnalog(enum interface::ControllerJoystick joystick) {
   return controller().get_analog(GetProsJoystick(joystick));
 }
 
-float ProsController::GetVoltage(interface::ControllerJoystick joystick) {
+float ProsController::GetVoltage(enum interface::ControllerJoystick joystick) {
   return controller().get_analog(GetProsJoystick(joystick)) /
-         constant::kProsMaxJoystickAnalog * constant::kProsMaxMotorVoltage;
+         static_cast<float>(constant::kProsMaxJoystickAnalog) *
+         constant::kProsMaxMotorVoltage;
 }
 }  // namespace hardware

@@ -1,8 +1,10 @@
 #pragma once
+#include <memory>
 #include <vector>
 
 #include "drivetrain/holonomic_drive.h"
 #include "hardware/pros_controller.h"
+#include "hardware/pros_motor_group.h"
 #include "interface/controller.h"
 #include "main.h"
 
@@ -16,19 +18,21 @@ const std::vector<int> kBackRightMotorPorts = {1, 2};
 const std::vector<int> kBackLeftMotorPorts = {1, 2};
 const std::vector<int> kFrontLeftMotorPorts = {1, 2};
 
-drivetrain::HolonomicDrivetrainMotors GetHolonomicDrivetrainMotors() {
-  return drivetrain::HolonomicDrivetrainMotors(
-      hardware::ProsMotorGroup(
-          kFrontRightMotorPorts, kDrivetrainReverse, kDrivetrainGearset),
-      hardware::ProsMotorGroup(
-          kBackRightMotorPorts, kDrivetrainReverse, kDrivetrainGearset),
-      hardware::ProsMotorGroup(
-          kBackLeftMotorPorts, kDrivetrainReverse, kDrivetrainGearset),
-      hardware::ProsMotorGroup(
-          kFrontLeftMotorPorts, kDrivetrainReverse, kDrivetrainGearset));
+drivetrain::HolonomicMotors GetHolonomicMotors() {
+  std::vector<std::unique_ptr<interface::Motor>> motors;
+  // emplace back constructs the ptr inside the vector instead of copying
+  motors.emplace_back(std::make_unique<hardware::ProsMotorGroup>(
+      kFrontRightMotorPorts, kDrivetrainReverse, kDrivetrainGearset));
+  motors.emplace_back(std::make_unique<hardware::ProsMotorGroup>(
+      kBackRightMotorPorts, kDrivetrainReverse, kDrivetrainGearset));
+  motors.emplace_back(std::make_unique<hardware::ProsMotorGroup>(
+      kBackLeftMotorPorts, kDrivetrainReverse, kDrivetrainGearset));
+  motors.emplace_back(std::make_unique<hardware::ProsMotorGroup>(
+      kFrontLeftMotorPorts, kDrivetrainReverse, kDrivetrainGearset));
+  return std::move(drivetrain::HolonomicMotors(std::move(motors)));
 }
 
-interface::Controller GetMasterController() {
-  return hardware::ProsController(pros::E_CONTROLLER_MASTER);
+std::unique_ptr<interface::Controller> GetMasterController() {
+  return std::make_unique<hardware::ProsController>(pros::E_CONTROLLER_MASTER);
 }
 }  // namespace constant

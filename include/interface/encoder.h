@@ -3,8 +3,8 @@
 namespace interface {
 class Encoder {
  public:
-  virtual void ResetEncoder();
-  virtual double GetPosition();
-  virtual float GetVelocity();
+  virtual void ResetEncoder() = 0;
+  virtual double GetPosition() = 0;
+  virtual float GetVelocity() = 0;
 };
 }  // namespace interface

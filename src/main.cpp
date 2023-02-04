@@ -1,5 +1,7 @@
 #include "main.h"
 
+#include <memory>
+
 #include "constant/motor_constants.h"
 #include "drivetrain/holonomic_drive.h"
 
@@ -75,11 +77,11 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-  interface::Controller controller(constant::GetMasterController());
-  drivetrain::HolonomicDirectDrive holonomic_direct_drive(
-      constant::GetHolonomicDrivetrainMotors());
+  auto controller = constant::GetMasterController();
+  auto drivetrain =
+      drivetrain::HolonomicDirectDrive(constant::GetHolonomicMotors());
 
-  while (true) { holonomic_direct_drive.Drive(controller); }
+  while (true) { drivetrain.Drive(*controller); }
 
   // pros::Controller master(pros::E_CONTROLLER_MASTER);
   // pros::Motor left_mtr(1);

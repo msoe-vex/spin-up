@@ -9,21 +9,20 @@
 #include "main.h"
 
 namespace hardware {
-class ProsMotorGroup : virtual public interface::Motor,
-                       virtual public interface::Encoder {
+class ProsMotorGroup : public interface::Motor, public interface::Encoder {
  public:
   ProsMotorGroup(
       std::vector<int> port_numbers, std::vector<bool> reverse,
       pros::motor_gearset_e_t);
 
-  void Move(int);
-  void MoveVoltage(int);
-  void MoveVelocity(float);
-  void MoveAbsolute(double position, int max_velocity);
+  void Move(int) override;
+  void MoveVoltage(int) override;
+  void MoveVelocity(float) override;
+  void MoveAbsolute(double position, int max_velocity) override;
 
-  void ResetEncoder();
-  double GetPosition();
-  float GetVelocity();
+  void ResetEncoder() override;
+  double GetPosition() override;
+  float GetVelocity() override;
 
  private:
   inline pros::MotorGroup& motors() { return motors_; }

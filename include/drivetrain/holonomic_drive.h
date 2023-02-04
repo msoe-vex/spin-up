@@ -1,46 +1,48 @@
 #pragma once
+#include <memory>
 #include <vector>
 
-#include "hardware/pros_motor_group.h"
 #include "interface/controller.h"
 #include "interface/motor.h"
 
 namespace drivetrain {
-class HolonomicDrivetrainMotors {
+class HolonomicMotors {
  public:
-  HolonomicDrivetrainMotors(
-      interface::Motor front_right_motor, interface::Motor back_right_motor,
-      interface::Motor back_left_motor, interface::Motor front_left_motor)
-      : drivetrain_motors_(
-            {front_right_motor, back_right_motor, back_left_motor,
-             front_left_motor}) {}
+  HolonomicMotors(std::vector<std::unique_ptr<interface::Motor>> motors)
+      : motors_(std::move(motors)) {}
 
- public:
-  inline void SetVoltages(const std::vector<int>& voltages) {
+  // Delete copy constructor and assignment operator to prevent issues with
+  // wrapped unique_ptrs
+  HolonomicMotors(const HolonomicMotors&) = delete;
+  HolonomicMotors& operator=(const HolonomicMotors&) = delete;
+
+  // Add move operators
+  HolonomicMotors(HolonomicMotors&&) = default;
+  HolonomicMotors& operator=(HolonomicMotors&&) = default;
+
+  inline void SetVoltages(const std::vector<float>& voltages) {
     for (int i = 0; i < voltages.size(); ++i) {
-      drivetrain_motors()[i].MoveVoltage(voltages[i]);
+      motors()[i]->MoveVoltage(voltages[i]);
     }
   };
 
  private:
-  inline std::vector<interface::Motor>& drivetrain_motors() {
-    return drivetrain_motors_;
+  inline std::vector<std::unique_ptr<interface::Motor>>& motors() {
+    return motors_;
   }
-  std::vector<interface::Motor> drivetrain_motors_;
+  std::vector<std::unique_ptr<interface::Motor>> motors_;
 };
 
 class HolonomicDrive {
  public:
-  HolonomicDrive(HolonomicDrivetrainMotors drivetrain_motors)
-      : drivetrain_motors_(drivetrain_motors) {}
+  HolonomicDrive(HolonomicMotors holonomic_motors)
+      : holonomic_motors_(std::move(holonomic_motors)) {}
 
- protected:
-  inline HolonomicDrivetrainMotors& drivetrain_motors() {
-    return drivetrain_motors_;
-  }
+  //  protected:
+  inline HolonomicMotors& holonomic_motors() { return holonomic_motors_; }
 
  private:
-  HolonomicDrivetrainMotors drivetrain_motors_;
+  HolonomicMotors holonomic_motors_;
 };
 
 /**
@@ -50,8 +52,8 @@ class FieldOrientedHolonomicDrive : public HolonomicDrive {};
 
 class HolonomicDirectDrive : virtual public HolonomicDrive {
  public:
- using HolonomicDrive::HolonomicDrive; // constructor inheritance
+  using HolonomicDrive::HolonomicDrive;  // constructor inheritance
 
-  void Drive(interface::Controller);
+  void Drive(interface::Controller&);
 };
 }  // namespace drivetrain

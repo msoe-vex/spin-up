@@ -4,17 +4,18 @@
 
 namespace hardware {
 pros::controller_analog_e_t GetProsJoystick(
-    interface::ControllerJoystick joystick);
+    enum interface::ControllerJoystick joystick);
 
-class ProsController : public virtual interface::Controller {
+class ProsController : public interface::Controller {
  public:
-  ProsController(pros::controller_id_e_t id) : controller_(id){};
+  ProsController(pros::controller_id_e_t id) : controller_(id) {}
 
-  int GetAnalog(interface::ControllerJoystick);
-  float GetVoltage(interface::ControllerJoystick);
+  int GetAnalog(enum interface::ControllerJoystick) override;
+  float GetVoltage(enum interface::ControllerJoystick) override;
 
  private:
   inline pros::Controller& controller() { return controller_; }
+
   pros::Controller controller_;
 };
 
