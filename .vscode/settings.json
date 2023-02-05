@@ -26,6 +26,7 @@
         "COMMS",
         "Holonomic",
         "libeigen",
+        "opcontrol",
         "proto",
         "rclcpp",
         "rosdep",

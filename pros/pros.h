@@ -1,5 +1,5 @@
 /**
- * \file main.h
+ * \file pros.h
  *
  * Contains common definitions and header files used throughout your PROS
  * project.
@@ -14,7 +14,6 @@
 
 #ifndef _PROS_MAIN_H_
 #define _PROS_MAIN_H_
-
 
 /**
  * If defined, some commonly used enums will have preprocessor macros which give

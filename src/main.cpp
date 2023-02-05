@@ -1,10 +1,5 @@
 #include "main.h"
 
-#include <memory>
-
-#include "drivetrain/holonomic_drive.h"
-#include "hardware/pros_controller.h"
-
 /**
  * When this callback is fired, it will toggle line 2 of the LCD text between
  * "I was pressed!" and nothing.

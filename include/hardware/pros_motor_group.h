@@ -1,4 +1,6 @@
 #pragma once
+#include "pros.h"
+
 #include <algorithm>
 #include <cstdint>
 #include <numeric>
@@ -8,7 +10,6 @@
 #include "hardware/pros_motor.h"
 #include "interface/encoder.h"
 #include "interface/motor.h"
-#include "main.h"
 
 namespace hardware {
 class ProsMotorGroup : public interface::Motor, public interface::Encoder {

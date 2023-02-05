@@ -2,7 +2,7 @@
 #include "constant/constants.h"
 #include "interface/encoder.h"
 #include "interface/motor.h"
-#include "main.h"
+#include "pros.h"
 
 namespace hardware {
 

@@ -2,7 +2,7 @@
 #include <memory>
 
 #include "interface/controller.h"
-#include "main.h"
+#include "pros.h"
 
 namespace hardware {
 pros::controller_analog_e_t GetProsJoystick(

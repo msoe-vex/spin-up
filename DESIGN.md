@@ -14,4 +14,6 @@ Each file should have a namespace; even classes. Namespaces should be organized 
 
 Robot code should interact exclusively with virtual classes defined in `interface`. `hardware` implementations should implement a respective `interface` in order to provide a consistent and swapable API.
 
+The [Purdue Robot Operating System](https://pros.cs.purdue.edu/v5/index.html#) (pros) is available via the include `#include "pros.h"`.
+
 Interfaces are instantiated in factory functions which may be attached to their respective `hardware` (e.g. `pros_controller`) or in the respective subsystem (e.g. `holonomic_drive`). Factory functions should be configured with data from `constant`. Note factories should return `std::unqiue_ptr<interface::<InterfaceClass>` in order to enable virtualization.
