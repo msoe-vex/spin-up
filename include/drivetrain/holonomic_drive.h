@@ -19,6 +19,7 @@ class HolonomicMotors {
   // Add move operators
   HolonomicMotors(HolonomicMotors&&) = default;
   HolonomicMotors& operator=(HolonomicMotors&&) = default;
+  ~HolonomicMotors() = default;
 
   inline void SetVoltages(const std::vector<float>& voltages) {
     for (int i = 0; i < voltages.size(); ++i) {
@@ -54,6 +55,6 @@ class HolonomicDirectDrive : virtual public HolonomicDrive {
  public:
   using HolonomicDrive::HolonomicDrive;  // constructor inheritance
 
-  void Drive(interface::Controller&);
+  void Drive(const interface::Controller&);
 };
 }  // namespace drivetrain

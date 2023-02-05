@@ -29,7 +29,7 @@ drivetrain::HolonomicMotors GetHolonomicMotors() {
       kBackLeftMotorPorts, kDrivetrainReverse, kDrivetrainGearset));
   motors.emplace_back(std::make_unique<hardware::ProsMotorGroup>(
       kFrontLeftMotorPorts, kDrivetrainReverse, kDrivetrainGearset));
-  return std::move(drivetrain::HolonomicMotors(std::move(motors)));
+  return drivetrain::HolonomicMotors(std::move(motors));
 }
 
 std::unique_ptr<interface::Controller> GetMasterController() {

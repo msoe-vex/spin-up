@@ -10,7 +10,7 @@ namespace hardware {
  */
 class ProsMotor : public interface::Motor, public interface::Encoder {
  public:
-  ProsMotor(int port_number, bool reverse, pros::motor_gearset_e_t);
+  ProsMotor(int port_number, bool reverse, pros::motor_gearset_e_t gearset) : motor_(port_number * (reverse ? -1 : 1), gearset) {}
 
   void Move(int) override;
   void MoveVoltage(int) override;

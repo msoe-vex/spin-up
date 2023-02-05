@@ -3,7 +3,7 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/include",
                 "${workspaceFolder}/pros_include",
                 "/opt/ros/noetic/include/**"
             ],

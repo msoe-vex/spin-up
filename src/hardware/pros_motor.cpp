@@ -1,10 +1,6 @@
 #include "hardware/pros_motor.h"
 
 namespace hardware {
-ProsMotor::ProsMotor(
-    int port_number, bool reverse, pros::motor_gearset_e_t gearset)
-    : motor_(port_number * (reverse ? -1 : 1), gearset) {}
-
 void ProsMotor::Move(int value) { motor().move(value); }
 void ProsMotor::MoveVoltage(int voltage) { motor().move_voltage(voltage); }
 void ProsMotor::MoveVelocity(float velocity) {
@@ -24,7 +20,6 @@ float ProsMotor::GetVelocity() {
 }
 
 int ProsMotor::GetMaxRpm() {
-  // assume all gearing is the same
   switch (motor().get_gearing()) {
     case pros::E_MOTOR_GEARSET_06:
       return 600;
@@ -32,8 +27,8 @@ int ProsMotor::GetMaxRpm() {
       return 200;
     case pros::E_MOTOR_GEARSET_36:
       return 100;
-    default:
+    default:  // bad
       return 200;
-  }
+  };
 }
 }  // namespace hardware
