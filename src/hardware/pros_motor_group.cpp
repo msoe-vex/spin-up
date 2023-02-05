@@ -28,6 +28,11 @@ float ProsMotorGroup::GetVelocity() const {
 
 std::vector<std::int8_t> ProsMotorGroup::FlipPortNumbers(
     std::vector<int> port_numbers, std::vector<bool> reverse) {
+  if (port_numbers.size() != reverse.size()) {
+    throw std::invalid_argument(
+        "Expected port_numbers to be the same size as reverse.");
+  }
+
   std::vector<std::int8_t> result;
   for (int i = 0; i < port_numbers.size(); ++i) {
     result.push_back(port_numbers[i] * (reverse[i] ? -1 : 1));

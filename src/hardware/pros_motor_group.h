@@ -1,6 +1,4 @@
 #pragma once
-#include "pros.h"
-
 #include <algorithm>
 #include <cstdint>
 #include <numeric>
@@ -10,6 +8,7 @@
 #include "hardware/pros_motor.h"
 #include "interface/encoder.h"
 #include "interface/motor.h"
+#include "pros.h"
 
 namespace hardware {
 class ProsMotorGroup : public interface::Motor, public interface::Encoder {
@@ -39,7 +38,8 @@ class ProsMotorGroup : public interface::Motor, public interface::Encoder {
   inline const pros::MotorGroup& motors() const { return motors_; }
   inline pros::MotorGroup& motors() { return motors_; }
 
-  // mutable to prevent issues with const - some pros methods aren't const
+  // mutable to prevent issues with const methods
+  // Some pros methods are missing const annotations
   mutable pros::MotorGroup motors_;
 };
 }  // namespace hardware
