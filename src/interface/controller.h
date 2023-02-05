@@ -1,11 +1,11 @@
 #pragma once
 namespace interface {
-enum class ControllerJoystick { kLeftX = 0, kLeftY, kRightX, kRightY };
+enum class ControllerJoystick { kLeftX, kLeftY, kRightX, kRightY };
 
 class Controller {
  public:
-  virtual int GetAnalog(ControllerJoystick joystick) const = 0;
-  virtual float GetVoltage(ControllerJoystick joystick) const = 0;
+  virtual int analog(ControllerJoystick joystick) const = 0;
+  virtual float voltage(ControllerJoystick joystick) const = 0;
 
   virtual ~Controller() = default;
 };

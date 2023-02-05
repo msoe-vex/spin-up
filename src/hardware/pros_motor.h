@@ -20,7 +20,7 @@ ProsMotorCartridge GetProsMotorCartridge(pros::motor_gearset_e_t);
 /**
  * A helper function for getting the max rpm of a motor.
  */
-int GetMaxRpm(const pros::Motor& motor);
+int get_max_rpm(const pros::Motor& motor);
 
 /**
  * A class which wraps a single pros::Motor object.
@@ -38,11 +38,11 @@ class ProsMotor : public interface::Motor, public interface::Encoder {
   void MoveAbsolute(double position, int max_velocity) override;
 
   void ResetEncoder() override;
-  double GetPosition() const override;
-  float GetVelocity() const override;
+  double position() const override;
+  float velocity() const override;
 
  private:
-  int GetMaxRpm() const;
+  int get_max_rpm() const;
 
   inline const pros::Motor& motor() const { return motor_; }
   inline pros::Motor& motor() { return motor_; }

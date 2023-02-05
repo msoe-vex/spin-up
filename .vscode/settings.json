@@ -10,7 +10,7 @@
         "**/build": true,
         "**/install": true,
         "**/log": true,
-        "**/pros_include": true
+        "**/pros": true
     },
     "cSpell.allowCompoundWords": true,
     "cSpell.ignorePaths": [

@@ -14,11 +14,12 @@ class ProsController : public interface::Controller {
 
   static std::unique_ptr<interface::Controller> GetMasterController();
 
-  int GetAnalog(interface::ControllerJoystick) const override;
-  float GetVoltage(interface::ControllerJoystick) const override;
+  int analog(interface::ControllerJoystick) const override;
+  float voltage(interface::ControllerJoystick) const override;
 
  private:
-  // inline pros::Controller& controller() { return controller_; }
+  inline pros::Controller& controller() { return controller_; }
+  inline const pros::Controller& controller() const { return controller_; }
   // mutable to enable usage from const methods
   mutable pros::Controller controller_;
 };

@@ -14,15 +14,16 @@ pros::controller_analog_e_t GetProsJoystick(
       return pros::E_CONTROLLER_ANALOG_RIGHT_X;
     case interface::ControllerJoystick::kRightY:
       return pros::E_CONTROLLER_ANALOG_RIGHT_Y;
+    default:
+      throw std::invalid_argument("Expected a convertible joystick.");
   }
-  throw std::invalid_argument("Expected a convertible joystick.");
 }
 
-int ProsController::GetAnalog(interface::ControllerJoystick joystick) const {
+int ProsController::analog(interface::ControllerJoystick joystick) const {
   return controller_.get_analog(GetProsJoystick(joystick));
 }
 
-float ProsController::GetVoltage(interface::ControllerJoystick joystick) const {
+float ProsController::voltage(interface::ControllerJoystick joystick) const {
   return controller_.get_analog(GetProsJoystick(joystick)) /
          // cast to float to prevent integer division
          static_cast<float>(constant::kProsMaxJoystickAnalog) *

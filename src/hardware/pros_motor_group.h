@@ -26,11 +26,11 @@ class ProsMotorGroup : public interface::Motor, public interface::Encoder {
   void MoveAbsolute(double position, int max_velocity) override;
 
   void ResetEncoder() override;
-  double GetPosition() const override;
-  float GetVelocity() const override;
+  double position() const override;
+  float velocity() const override;
 
  private:
-  int GetMaxRpm() const;
+  int get_max_rpm() const;
 
   std::vector<std::int8_t> FlipPortNumbers(
       std::vector<int> port_numbers, std::vector<bool> reverse);

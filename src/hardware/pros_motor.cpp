@@ -27,7 +27,7 @@ ProsMotorCartridge GetProsMotorCartridge(pros::motor_gearset_e_t gearset) {
 }
 }  // namespace
 
-int GetMaxRpm(const pros::Motor& motor) {
+int get_max_rpm(const pros::Motor& motor) {
   switch (GetProsMotorCartridge(motor.get_gearing())) {
     case ProsMotorCartridge::kBlueCartridge:
       return 600;
@@ -41,7 +41,7 @@ int GetMaxRpm(const pros::Motor& motor) {
 void ProsMotor::Move(int value) { motor().move(value); }
 void ProsMotor::MoveVoltage(int voltage) { motor().move_voltage(voltage); }
 void ProsMotor::MoveVelocity(float velocity) {
-  float rpm = (velocity / constant::kMaxVelocity) * GetMaxRpm();
+  float rpm = (velocity / constant::kMaxVelocity) * get_max_rpm();
   motor().move_velocity(rpm);
 }
 void ProsMotor::MoveAbsolute(double position, int max_velocity) {
@@ -50,11 +50,11 @@ void ProsMotor::MoveAbsolute(double position, int max_velocity) {
 
 void ProsMotor::ResetEncoder() { motor().tare_position(); }
 
-double ProsMotor::GetPosition() const { return motor().get_position(); }
-float ProsMotor::GetVelocity() const {
+double ProsMotor::position() const { return motor().get_position(); }
+float ProsMotor::velocity() const {
   float rpm = motor().get_actual_velocity();
-  return (rpm / GetMaxRpm()) * constant::kMaxVelocity;
+  return (rpm / get_max_rpm()) * constant::kMaxVelocity;
 }
 
-int ProsMotor::GetMaxRpm() const { return hardware::GetMaxRpm(motor()); }
+int ProsMotor::get_max_rpm() const { return hardware::get_max_rpm(motor()); }
 }  // namespace hardware

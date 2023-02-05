@@ -6,7 +6,7 @@ void ProsMotorGroup::MoveVoltage(int voltage) {
   motors().move_voltage(voltage);
 }
 void ProsMotorGroup::MoveVelocity(float velocity) {
-  float rpm = (velocity / constant::kMaxVelocity) * GetMaxRpm();
+  float rpm = (velocity / constant::kMaxVelocity) * get_max_rpm();
   motors().move_velocity(rpm);
 }
 void ProsMotorGroup::MoveAbsolute(double position, int max_velocity) {
@@ -14,16 +14,16 @@ void ProsMotorGroup::MoveAbsolute(double position, int max_velocity) {
 }
 void ProsMotorGroup::ResetEncoder() { motors().tare_position(); }
 
-double ProsMotorGroup::GetPosition() const {
+double ProsMotorGroup::position() const {
   // manual member access to avoid automatically calling const motors()
   std::vector<double> positions = motors_.get_positions();
   return std::reduce(positions.begin(), positions.end()) / positions.size();
 }
-float ProsMotorGroup::GetVelocity() const {
+float ProsMotorGroup::velocity() const {
   std::vector<double> motor_rpms = motors_.get_actual_velocities();
   float rpm =
       std::reduce(motor_rpms.cbegin(), motor_rpms.cend()) / motor_rpms.size();
-  return (rpm / GetMaxRpm()) * constant::kMaxVelocity;
+  return (rpm / get_max_rpm()) * constant::kMaxVelocity;
 }
 
 std::vector<std::int8_t> ProsMotorGroup::FlipPortNumbers(
@@ -40,7 +40,7 @@ std::vector<std::int8_t> ProsMotorGroup::FlipPortNumbers(
   return result;
 }
 
-int ProsMotorGroup::GetMaxRpm() const {
-  return hardware::GetMaxRpm(motors_[0]);
+int ProsMotorGroup::get_max_rpm() const {
+  return hardware::get_max_rpm(motors_[0]);
 }
 }  // namespace hardware
