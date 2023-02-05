@@ -2,12 +2,11 @@
 
 namespace drivetrain {
 void HolonomicDirectDrive::Drive(const interface::Controller& controller) {
-  //   const std::vector<float> voltages = {
-  //       controller->GetVoltage(interface::ControllerJoystick::kLeftX),
-  //       controller->GetVoltage(interface::ControllerJoystick::kLeftY),
-  //       controller->GetVoltage(interface::ControllerJoystick::kRightX),
-  //       controller->GetVoltage(interface::ControllerJoystick::kRightY)};
-  //   drivetrain_motors().SetVoltages(voltages);
+  const std::vector<float> voltages = {
+      controller.GetVoltage(interface::ControllerJoystick::kLeftX),
+      controller.GetVoltage(interface::ControllerJoystick::kLeftY),
+      controller.GetVoltage(interface::ControllerJoystick::kRightX),
+      controller.GetVoltage(interface::ControllerJoystick::kRightY)};
+  holonomic_motors().SetVoltages(voltages);
 }
-
 }  // namespace drivetrain

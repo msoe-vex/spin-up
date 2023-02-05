@@ -1,4 +1,6 @@
 #pragma once
+#include <memory>
+
 #include "interface/controller.h"
 #include "main.h"
 
@@ -10,13 +12,15 @@ class ProsController : public interface::Controller {
  public:
   ProsController(pros::controller_id_e_t id) : controller_(id) {}
 
-  int GetAnalog(interface::ControllerJoystick) override;
-  float GetVoltage(interface::ControllerJoystick) override;
+  int GetAnalog(interface::ControllerJoystick) const override;
+  float GetVoltage(interface::ControllerJoystick) const override;
+
+  static std::unique_ptr<interface::Controller> GetMasterController();
 
  private:
-  inline pros::Controller& controller() { return controller_; }
-
-  pros::Controller controller_;
+  // inline pros::Controller& controller() { return controller_; }
+  // mutable to enable usage from const methods
+  mutable pros::Controller controller_;
 };
 
 }  // namespace hardware

@@ -7,5 +7,7 @@ class Motor {
   virtual void MoveVoltage(int) = 0;
   virtual void MoveVelocity(float) = 0;
   virtual void MoveAbsolute(double position, int max_velocity) = 0;
+
+  virtual ~Motor() = default;
 };
 }  // namespace interface

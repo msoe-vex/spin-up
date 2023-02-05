@@ -1,6 +1,17 @@
 #include "hardware/pros_motor.h"
 
 namespace hardware {
+int GetMaxRpm(pros::motor_gearset_e_t gearset) {
+  auto cartridge = static_cast<ProsMotorCartridge>(gearset);
+  switch (cartridge) {
+    case ProsMotorCartridge::kBlueCartridge:
+      return 600;
+    case ProsMotorCartridge::kGreenCartridge:
+      return 200;
+  }
+  throw std::invalid_argument("Specified gearset is not supported.");
+}
+
 void ProsMotor::Move(int value) { motor().move(value); }
 void ProsMotor::MoveVoltage(int voltage) { motor().move_voltage(voltage); }
 void ProsMotor::MoveVelocity(float velocity) {
@@ -20,15 +31,6 @@ float ProsMotor::GetVelocity() {
 }
 
 int ProsMotor::GetMaxRpm() {
-  switch (motor().get_gearing()) {
-    case pros::E_MOTOR_GEARSET_06:
-      return 600;
-    case pros::E_MOTOR_GEARSET_18:
-      return 200;
-    case pros::E_MOTOR_GEARSET_36:
-      return 100;
-    default:  // bad
-      return 200;
-  };
+  return hardware::GetMaxRpm(motor().get_gearing());
 }
 }  // namespace hardware

@@ -2,8 +2,8 @@
 
 #include <memory>
 
-#include "constant/motor_constants.h"
 #include "drivetrain/holonomic_drive.h"
+#include "hardware/pros_controller.h"
 
 /**
  * When this callback is fired, it will toggle line 2 of the LCD text between
@@ -77,9 +77,10 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-  auto controller = constant::GetMasterController();
-  auto drivetrain =
-      drivetrain::HolonomicDirectDrive(constant::GetHolonomicMotors());
+  auto controller = hardware::ProsController::GetMasterController();
+
+  auto drivetrain = drivetrain::HolonomicDirectDrive(
+      drivetrain::HolonomicMotors::GetHolonomicMotors());
 
   while (true) { drivetrain.Drive(*controller); }
 

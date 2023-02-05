@@ -1,13 +1,6 @@
 #include "hardware/pros_motor_group.h"
 
 namespace hardware {
-ProsMotorGroup::ProsMotorGroup(
-    std::vector<int> port_numbers, std::vector<bool> reverse,
-    pros::motor_gearset_e_t gearset)
-    : motors_(ProsMotorGroup::FlipPortNumbers(port_numbers, reverse)) {
-  motors().set_gearing(gearset);
-}
-
 void ProsMotorGroup::Move(int value) { motors().move(value); }
 void ProsMotorGroup::MoveVoltage(int voltage) {
   motors().move_voltage(voltage);
@@ -19,7 +12,6 @@ void ProsMotorGroup::MoveVelocity(float velocity) {
 void ProsMotorGroup::MoveAbsolute(double position, int max_velocity) {
   motors().move_absolute(position, max_velocity);
 }
-
 void ProsMotorGroup::ResetEncoder() { motors().tare_position(); }
 
 double ProsMotorGroup::GetPosition() {
@@ -43,16 +35,6 @@ std::vector<std::int8_t> ProsMotorGroup::FlipPortNumbers(
 }
 
 int ProsMotorGroup::GetMaxRpm() {
-  // assume all gearing is the same
-  switch (motors()[0].get_gearing()) {
-    case pros::E_MOTOR_GEARSET_06:
-      return 600;
-    case pros::E_MOTOR_GEARSET_18:
-      return 200;
-    case pros::E_MOTOR_GEARSET_36:
-      return 100;
-    default:
-      return 200;
-  }
+  return hardware::GetMaxRpm(motors()[0].get_gearing());
 }
 }  // namespace hardware

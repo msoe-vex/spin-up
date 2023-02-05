@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "constant/constants.h"
+#include "hardware/pros_motor.h"
 #include "interface/encoder.h"
 #include "interface/motor.h"
 #include "main.h"
@@ -13,7 +14,10 @@ class ProsMotorGroup : public interface::Motor, public interface::Encoder {
  public:
   ProsMotorGroup(
       std::vector<int> port_numbers, std::vector<bool> reverse,
-      pros::motor_gearset_e_t);
+      ProsMotorCartridge motor_cartridge)
+      : motors_(FlipPortNumbers(port_numbers, reverse)) {
+    motors().set_gearing(static_cast<pros::motor_gearset_e_t>(motor_cartridge));
+  }
 
   void Move(int) override;
   void MoveVoltage(int) override;
