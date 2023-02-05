@@ -12,10 +12,10 @@ class ProsController : public interface::Controller {
  public:
   ProsController(pros::controller_id_e_t id) : controller_(id) {}
 
+  static std::unique_ptr<interface::Controller> GetMasterController();
+
   int GetAnalog(interface::ControllerJoystick) const override;
   float GetVoltage(interface::ControllerJoystick) const override;
-
-  static std::unique_ptr<interface::Controller> GetMasterController();
 
  private:
   // inline pros::Controller& controller() { return controller_; }

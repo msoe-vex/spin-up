@@ -41,7 +41,6 @@ std::vector<std::int8_t> ProsMotorGroup::FlipPortNumbers(
 }
 
 int ProsMotorGroup::GetMaxRpm() const {
-  return hardware::GetMaxRpm(motors_[0].get_gearing());
-  // return hardware::GetMaxRpm(motors()[0].get_gearing());
+  return hardware::GetMaxRpm(motors_[0]);
 }
 }  // namespace hardware
