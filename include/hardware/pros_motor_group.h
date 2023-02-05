@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include <cstdint>
 #include <numeric>
 #include <vector>
@@ -25,16 +26,19 @@ class ProsMotorGroup : public interface::Motor, public interface::Encoder {
   void MoveAbsolute(double position, int max_velocity) override;
 
   void ResetEncoder() override;
-  double GetPosition() override;
-  float GetVelocity() override;
+  double GetPosition() const override;
+  float GetVelocity() const override;
 
  private:
-  inline pros::MotorGroup& motors() { return motors_; }
-  int GetMaxRpm();
+  int GetMaxRpm() const;
 
   std::vector<std::int8_t> FlipPortNumbers(
       std::vector<int> port_numbers, std::vector<bool> reverse);
 
-  pros::MotorGroup motors_;
+  inline const pros::MotorGroup& motors() const { return motors_; }
+  inline pros::MotorGroup& motors() { return motors_; }
+
+  // mutable to prevent issues with const - some pros methods aren't const
+  mutable pros::MotorGroup motors_;
 };
 }  // namespace hardware

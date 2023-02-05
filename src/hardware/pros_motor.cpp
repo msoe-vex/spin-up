@@ -24,13 +24,13 @@ void ProsMotor::MoveAbsolute(double position, int max_velocity) {
 
 void ProsMotor::ResetEncoder() { motor().tare_position(); }
 
-double ProsMotor::GetPosition() { return motor().get_position(); }
-float ProsMotor::GetVelocity() {
+double ProsMotor::GetPosition() const { return motor().get_position(); }
+float ProsMotor::GetVelocity() const {
   float rpm = motor().get_actual_velocity();
   return (rpm / GetMaxRpm()) * constant::kMaxVelocity;
 }
 
-int ProsMotor::GetMaxRpm() {
+int ProsMotor::GetMaxRpm() const {
   return hardware::GetMaxRpm(motor().get_gearing());
 }
 }  // namespace hardware

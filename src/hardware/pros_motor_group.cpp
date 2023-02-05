@@ -14,12 +14,13 @@ void ProsMotorGroup::MoveAbsolute(double position, int max_velocity) {
 }
 void ProsMotorGroup::ResetEncoder() { motors().tare_position(); }
 
-double ProsMotorGroup::GetPosition() {
-  std::vector<double> positions = motors().get_positions();
+double ProsMotorGroup::GetPosition() const {
+  // manual member access to avoid automatically calling const motors()
+  std::vector<double> positions = motors_.get_positions();
   return std::reduce(positions.begin(), positions.end()) / positions.size();
 }
-float ProsMotorGroup::GetVelocity() {
-  std::vector<double> motor_rpms = motors().get_actual_velocities();
+float ProsMotorGroup::GetVelocity() const {
+  std::vector<double> motor_rpms = motors_.get_actual_velocities();
   float rpm =
       std::reduce(motor_rpms.cbegin(), motor_rpms.cend()) / motor_rpms.size();
   return (rpm / GetMaxRpm()) * constant::kMaxVelocity;
@@ -34,7 +35,8 @@ std::vector<std::int8_t> ProsMotorGroup::FlipPortNumbers(
   return result;
 }
 
-int ProsMotorGroup::GetMaxRpm() {
-  return hardware::GetMaxRpm(motors()[0].get_gearing());
+int ProsMotorGroup::GetMaxRpm() const {
+  return hardware::GetMaxRpm(motors_[0].get_gearing());
+  // return hardware::GetMaxRpm(motors()[0].get_gearing());
 }
 }  // namespace hardware

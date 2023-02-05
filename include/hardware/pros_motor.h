@@ -29,11 +29,13 @@ class ProsMotor : public interface::Motor, public interface::Encoder {
   void MoveAbsolute(double position, int max_velocity) override;
 
   void ResetEncoder() override;
-  double GetPosition() override;
-  float GetVelocity() override;
+  double GetPosition() const override;
+  float GetVelocity() const override;
 
  private:
-  int GetMaxRpm();
+  int GetMaxRpm() const;
+
+  inline const pros::Motor& motor() const { return motor_; }
   inline pros::Motor& motor() { return motor_; }
 
   pros::Motor motor_;
