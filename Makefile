@@ -10,7 +10,7 @@ ROOT=.
 FWDIR:=$(ROOT)/firmware
 BINDIR=$(ROOT)/bin
 SRCDIR=$(ROOT)/src
-INCDIR=$(ROOT)/include $(ROOT)/pros
+INCDIR=$(ROOT)/src $(ROOT)/pros
 
 WARNFLAGS+=
 EXTRA_CFLAGS=
