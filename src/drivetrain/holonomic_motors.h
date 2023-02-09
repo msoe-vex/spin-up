@@ -7,8 +7,8 @@
 namespace drivetrain {
 class HolonomicMotors {
  public:
-  HolonomicMotors(std::vector<std::unique_ptr<interface::Motor>> motors)
-      : motors_(std::move(motors)) {}
+  HolonomicMotors(std::vector<std::unique_ptr<interface::Motor>> motor_ptrs)
+      : motor_ptrs_(std::move(motor_ptrs)) {}
 
   static drivetrain::HolonomicMotors MakeHolonomicMotors();
 
@@ -22,16 +22,21 @@ class HolonomicMotors {
   HolonomicMotors& operator=(HolonomicMotors&&) = default;
   ~HolonomicMotors() = default;
 
-  inline void SetVoltages(const std::vector<float>& voltages) {
+  inline void SetVoltages(const std::vector<float>& voltages) const {
     for (int i = 0; i < voltages.size(); ++i) {
-      motors()[i]->MoveVoltage(voltages[i]);
+      motor_ptrs()[i]->MoveVoltage(voltages[i]);
     }
   };
 
  private:
-  inline std::vector<std::unique_ptr<interface::Motor>>& motors() {
-    return motors_;
+  inline std::vector<std::unique_ptr<interface::Motor>>& motor_ptrs() {
+    return motor_ptrs_;
   }
-  std::vector<std::unique_ptr<interface::Motor>> motors_;
+  inline const std::vector<std::unique_ptr<interface::Motor>>& motor_ptrs()
+      const {
+    return motor_ptrs_;
+  }
+
+  std::vector<std::unique_ptr<interface::Motor>> motor_ptrs_;
 };
 }  // namespace drivetrain
