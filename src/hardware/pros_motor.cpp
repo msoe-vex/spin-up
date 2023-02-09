@@ -1,7 +1,8 @@
 #include "hardware/pros_motor.h"
 
 namespace hardware {
-pros::motor_gearset_e_t GetProsGearset(ProsMotorCartridge cartridge) {
+pros::motor_gearset_e_t ConvertProsMotorCartridge(
+    ProsMotorCartridge cartridge) {
   switch (cartridge) {
     case ProsMotorCartridge::kBlueCartridge:
       return pros::E_MOTOR_GEARSET_06;
@@ -13,8 +14,7 @@ pros::motor_gearset_e_t GetProsGearset(ProsMotorCartridge cartridge) {
   }
 }
 
-namespace {
-ProsMotorCartridge GetProsMotorCartridge(pros::motor_gearset_e_t gearset) {
+ProsMotorCartridge ConvertProsGearset(pros::motor_gearset_e_t gearset) {
   switch (gearset) {
     case pros::E_MOTOR_GEARSET_06:
       return ProsMotorCartridge::kBlueCartridge;
@@ -25,10 +25,9 @@ ProsMotorCartridge GetProsMotorCartridge(pros::motor_gearset_e_t gearset) {
           "Failed to convert pros gearset to cartridge.");
   }
 }
-}  // namespace
 
-int GetMaxRpm(const pros::Motor& motor) {
-  switch (GetProsMotorCartridge(motor.get_gearing())) {
+int GetMaxRpm(ProsMotorCartridge cartridge) {
+  switch (cartridge) {
     case ProsMotorCartridge::kBlueCartridge:
       return 600;
     case ProsMotorCartridge::kGreenCartridge:
@@ -56,5 +55,8 @@ float ProsMotor::velocity() const {
   return (rpm / max_rpm()) * constant::kMaxVelocity;
 }
 
-int ProsMotor::max_rpm() const { return GetMaxRpm(motor()); }
+ProsMotorCartridge ProsMotor::cartridge() const {
+  return ConvertProsGearset(motor().get_gearing());
+}
+int ProsMotor::max_rpm() const { return GetMaxRpm(cartridge()); }
 }  // namespace hardware

@@ -12,16 +12,13 @@ enum class ProsMotorCartridge {
   kGreenCartridge = pros::E_MOTOR_GEAR_GREEN  // 200 rpm
 };
 
-pros::motor_gearset_e_t GetProsGearset(ProsMotorCartridge);
-
-namespace {
-ProsMotorCartridge GetProsMotorCartridge(pros::motor_gearset_e_t);
-}  // namespace
+pros::motor_gearset_e_t ConvertProsMotorCartridge(ProsMotorCartridge);
+ProsMotorCartridge ConvertProsGearset(pros::motor_gearset_e_t);
 
 /**
  * A helper function for getting the max rpm of a motor.
  */
-int GetMaxRpm(const pros::Motor& motor);
+int GetMaxRpm(const ProsMotorCartridge);
 
 /**
  * A class which wraps a single pros::Motor object.
@@ -30,7 +27,7 @@ class ProsMotor : public interface::Motor, public interface::Encoder {
  public:
   ProsMotor(int port_number, bool reverse, ProsMotorCartridge motor_cartridge)
       : motor_(
-            port_number * (reverse ? -1 : 1), GetProsGearset(motor_cartridge)) {
+            port_number * (reverse ? -1 : 1), ConvertProsMotorCartridge(motor_cartridge)) {
   }
 
   void Move(int) override;
@@ -43,6 +40,7 @@ class ProsMotor : public interface::Motor, public interface::Encoder {
   float velocity() const override;
 
  private:
+  ProsMotorCartridge cartridge() const;
   int max_rpm() const;
 
   inline const pros::Motor& motor() const { return motor_; }
