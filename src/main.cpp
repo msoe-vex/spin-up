@@ -72,12 +72,12 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-  auto controller = hardware::ProsController::MakeMasterController();
+  auto driver_controller = hardware::ProsController::MakeDriverController();
 
   auto drivetrain = drivetrain::HolonomicDirectDrive(
       drivetrain::HolonomicMotors::MakeHolonomicMotors());
 
-  while (true) { drivetrain.Drive(*controller); }
+  while (true) { drivetrain.Drive(*driver_controller); }
 
   // pros::Controller master(pros::E_CONTROLLER_MASTER);
   // pros::Motor left_mtr(1);
