@@ -30,7 +30,7 @@ class ProsMotorGroup : public interface::Motor, public interface::Encoder {
   float velocity() const override;
 
  private:
-  int get_max_rpm() const;
+  int max_rpm() const;
 
   std::vector<std::int8_t> FlipPortNumbers(
       std::vector<int> port_numbers, std::vector<bool> reverse);

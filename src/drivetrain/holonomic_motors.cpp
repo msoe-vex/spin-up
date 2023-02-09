@@ -1,7 +1,7 @@
 #include "drivetrain/holonomic_motors.h"
 
 namespace drivetrain {
-HolonomicMotors HolonomicMotors::GetHolonomicMotors() {
+HolonomicMotors HolonomicMotors::MakeHolonomicMotors() {
   std::vector<std::unique_ptr<interface::Motor>> motors;
   // emplace back constructs the ptr inside the vector instead of copying
   motors.emplace_back(std::make_unique<hardware::ProsMotorGroup>(

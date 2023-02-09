@@ -1,8 +1,8 @@
 #pragma once
 
 namespace constant {
-const float kMaxVelocity = 50.0f;             // Max robot velocity in in/s
-const int kProsMaxMotorVoltage = 12000;       // Max voltage value for a motor
+const float kMaxVelocity = 50.0f;        // Max robot velocity in in/s
+const int kProsMaxMotorVoltage = 12000;  // Max voltage value for a motor
 const int kProsMaxJoystickAnalog = 127;  // Max value of a controller stick
 }  // namespace constant
 

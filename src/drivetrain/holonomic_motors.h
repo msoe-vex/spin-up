@@ -10,7 +10,7 @@ class HolonomicMotors {
   HolonomicMotors(std::vector<std::unique_ptr<interface::Motor>> motors)
       : motors_(std::move(motors)) {}
 
-  static drivetrain::HolonomicMotors GetHolonomicMotors();
+  static drivetrain::HolonomicMotors MakeHolonomicMotors();
 
   // Delete copy constructor and assignment operator to prevent issues with
   // wrapped unique_ptrs

@@ -7,6 +7,7 @@
 namespace hardware {
 
 enum class ProsMotorCartridge {
+  // equal to pros value to enable casting
   kBlueCartridge = pros::E_MOTOR_GEAR_BLUE,   // 600 rpm
   kGreenCartridge = pros::E_MOTOR_GEAR_GREEN  // 200 rpm
 };
@@ -20,7 +21,7 @@ ProsMotorCartridge GetProsMotorCartridge(pros::motor_gearset_e_t);
 /**
  * A helper function for getting the max rpm of a motor.
  */
-int get_max_rpm(const pros::Motor& motor);
+int GetMaxRpm(const pros::Motor& motor);
 
 /**
  * A class which wraps a single pros::Motor object.
@@ -42,7 +43,7 @@ class ProsMotor : public interface::Motor, public interface::Encoder {
   float velocity() const override;
 
  private:
-  int get_max_rpm() const;
+  int max_rpm() const;
 
   inline const pros::Motor& motor() const { return motor_; }
   inline pros::Motor& motor() { return motor_; }

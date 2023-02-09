@@ -12,7 +12,7 @@ class ProsController : public interface::Controller {
  public:
   ProsController(pros::controller_id_e_t id) : controller_(id) {}
 
-  static std::unique_ptr<interface::Controller> GetMasterController();
+  static std::unique_ptr<interface::Controller> MakeMasterController();
 
   int analog(interface::ControllerJoystick) const override;
   float voltage(interface::ControllerJoystick) const override;
@@ -23,5 +23,4 @@ class ProsController : public interface::Controller {
   // mutable to enable usage from const methods
   mutable pros::Controller controller_;
 };
-
 }  // namespace hardware

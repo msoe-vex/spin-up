@@ -18,4 +18,4 @@ The [Purdue Robot Operating System](https://pros.cs.purdue.edu/v5/index.html#) (
 
 Interfaces are instantiated in factory functions which may be attached to their respective `hardware` (e.g. `pros_controller`) or in the respective subsystem (e.g. `holonomic_drive`). Factory functions should be configured with data from `constant`. Note factories should return `std::unique_ptr<interface::<InterfaceClass>` in order to enable virtualization.
 
-Methods and functions which behave like simple getters (e..g encoder `velocity`), .
+Methods and functions which behave like simple getters (e..g encoder `velocity`) should be written as standard variables. Functions which do more computation or which do not expose (or pretend to expose) a field on a class should be written as `Get<MyValue>`, e.g. `GetProsJoystick`.

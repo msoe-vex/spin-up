@@ -30,7 +30,7 @@ float ProsController::voltage(interface::ControllerJoystick joystick) const {
          constant::kProsMaxMotorVoltage;
 }
 
-std::unique_ptr<interface::Controller> ProsController::GetMasterController() {
+std::unique_ptr<interface::Controller> ProsController::MakeMasterController() {
   return std::make_unique<hardware::ProsController>(pros::E_CONTROLLER_MASTER);
 }
 }  // namespace hardware
