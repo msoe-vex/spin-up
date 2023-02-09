@@ -25,9 +25,9 @@ int GetMaxRpm(const ProsMotorCartridge);
  */
 class ProsMotor : public interface::Motor, public interface::Encoder {
  public:
-  ProsMotor(int port_number, bool reverse, ProsMotorCartridge motor_cartridge)
+  ProsMotor(int port_number, bool reverse, ProsMotorCartridge cartridge)
       : motor_(
-            port_number * (reverse ? -1 : 1), ConvertProsMotorCartridge(motor_cartridge)) {
+            port_number * (reverse ? -1 : 1), ConvertProsMotorCartridge(cartridge)) {
   }
 
   void Move(int) override;

@@ -15,9 +15,9 @@ class ProsMotorGroup : public interface::Motor, public interface::Encoder {
  public:
   ProsMotorGroup(
       std::vector<int> port_numbers, std::vector<bool> reverse,
-      ProsMotorCartridge motor_cartridge)
+      ProsMotorCartridge cartridge)
       : motors_(FlipPortNumbers(port_numbers, reverse)) {
-    motors().set_gearing(static_cast<pros::motor_gearset_e_t>(motor_cartridge));
+    motors().set_gearing(static_cast<pros::motor_gearset_e_t>(cartridge));
   }
 
   void Move(int) override;
