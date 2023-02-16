@@ -20,11 +20,11 @@ pros::controller_analog_e_t GetProsJoystick(
 }
 
 int ProsController::analog(interface::ControllerJoystick joystick) const {
-  return controller_.get_analog(GetProsJoystick(joystick));
+  return controller().get_analog(GetProsJoystick(joystick));
 }
 
 float ProsController::voltage(interface::ControllerJoystick joystick) const {
-  return controller_.get_analog(GetProsJoystick(joystick)) /
+  return controller().get_analog(GetProsJoystick(joystick)) /
          // cast to float to prevent integer division
          static_cast<float>(constant::kProsMaxJoystickAnalog) *
          constant::kProsMaxMotorVoltage;

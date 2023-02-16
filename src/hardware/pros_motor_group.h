@@ -30,14 +30,14 @@ class ProsMotorGroup : public interface::Motor, public interface::Encoder {
   float velocity() const override;
 
  private:
-  ProsMotorCartridge cartridge() const;
-  int max_rpm() const;
+  [[nodiscard]] ProsMotorCartridge cartridge() const;
+  [[nodiscard]] int max_rpm() const;
 
-  std::vector<std::int8_t> FlipPortNumbers(
+  [[nodiscard]] std::vector<std::int8_t> FlipPortNumbers(
       std::vector<int> port_numbers, std::vector<bool> reverse);
 
-  inline const pros::MotorGroup& motors() const { return motors_; }
-  inline pros::MotorGroup& motors() { return motors_; }
+  [[nodiscard]] inline pros::MotorGroup& motors() const { return motors_; }
+  [[nodiscard]] inline pros::MotorGroup& motors() { return motors_; }
 
   // mutable to prevent issues with const methods
   // Some pros methods are missing const annotations

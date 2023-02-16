@@ -12,7 +12,9 @@ class HolonomicDrive {
       : holonomic_motors_(std::move(holonomic_motors)) {}
 
  protected:
-  inline HolonomicMotors& holonomic_motors() { return holonomic_motors_; }
+  [[nodiscard]] inline HolonomicMotors& holonomic_motors() {
+    return holonomic_motors_;
+  }
 
  private:
   HolonomicMotors holonomic_motors_;

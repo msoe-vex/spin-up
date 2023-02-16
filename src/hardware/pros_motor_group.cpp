@@ -16,11 +16,11 @@ void ProsMotorGroup::ResetEncoder() { motors().tare_position(); }
 
 double ProsMotorGroup::position() const {
   // manual member access to avoid automatically calling const motors()
-  std::vector<double> positions = motors_.get_positions();
+  std::vector<double> positions = motors().get_positions();
   return std::reduce(positions.begin(), positions.end()) / positions.size();
 }
 float ProsMotorGroup::velocity() const {
-  std::vector<double> motor_rpms = motors_.get_actual_velocities();
+  std::vector<double> motor_rpms = motors().get_actual_velocities();
   float rpm =
       std::reduce(motor_rpms.cbegin(), motor_rpms.cend()) / motor_rpms.size();
   return (rpm / max_rpm()) * constant::kMaxVelocity;
@@ -41,7 +41,7 @@ std::vector<std::int8_t> ProsMotorGroup::FlipPortNumbers(
 }
 
 ProsMotorCartridge ProsMotorGroup::cartridge() const {
-  return ConvertProsGearset(motors_[0].get_gearing());
+  return ConvertProsGearset(motors()[0].get_gearing());
 }
 int ProsMotorGroup::max_rpm() const { return GetMaxRpm(cartridge()); }
 }  // namespace hardware

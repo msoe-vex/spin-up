@@ -12,15 +12,17 @@ class ProsController : public interface::Controller {
  public:
   ProsController(pros::controller_id_e_t id) : controller_(id) {}
 
-  static std::unique_ptr<ProsController> MakeDriverController();
-  static std::unique_ptr<ProsController> MakeOperatorController();
+  [[nodiscard]] static std::unique_ptr<ProsController> MakeDriverController();
+  [[nodiscard]] static std::unique_ptr<ProsController> MakeOperatorController();
 
-  int analog(interface::ControllerJoystick) const override;
-  float voltage(interface::ControllerJoystick) const override;
+  [[nodicard]] int analog(interface::ControllerJoystick) const override;
+  [[nodiscard]] float voltage(interface::ControllerJoystick) const override;
 
  private:
-  inline pros::Controller& controller() { return controller_; }
-  inline const pros::Controller& controller() const { return controller_; }
+  [[nodiscard]] inline pros::Controller& controller() { return controller_; }
+  [[nodiscard]] inline pros::Controller& controller() const {
+    return controller_;
+  }
   // mutable to enable usage from const methods
   mutable pros::Controller controller_;
 };

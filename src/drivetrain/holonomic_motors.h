@@ -10,7 +10,7 @@ class HolonomicMotors {
   HolonomicMotors(std::vector<std::unique_ptr<interface::Motor>> motor_ptrs)
       : motor_ptrs_(std::move(motor_ptrs)) {}
 
-  static HolonomicMotors MakeHolonomicMotors();
+  [[nodiscard]] static HolonomicMotors MakeHolonomicMotors();
 
   // Delete copy constructor and assignment operator to prevent issues with
   // wrapped unique_ptrs
@@ -29,11 +29,12 @@ class HolonomicMotors {
   };
 
  private:
-  inline std::vector<std::unique_ptr<interface::Motor>>& motor_ptrs() {
+  [[nodiscard]] inline std::vector<std::unique_ptr<interface::Motor>>&
+  motor_ptrs() {
     return motor_ptrs_;
   }
-  inline const std::vector<std::unique_ptr<interface::Motor>>& motor_ptrs()
-      const {
+  [[nodiscard]] inline const std::vector<std::unique_ptr<interface::Motor>>&
+  motor_ptrs() const {
     return motor_ptrs_;
   }
 
