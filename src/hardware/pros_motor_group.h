@@ -6,6 +6,7 @@
 
 #include "constant/constants.h"
 #include "hardware/pros_motor.h"
+#include "hardware/pros_motor_cartridge.h"
 #include "interface/encoder.h"
 #include "interface/motor.h"
 #include "pros.h"
@@ -20,14 +21,21 @@ class ProsMotorGroup : public interface::Motor, public interface::Encoder {
     motors().set_gearing(static_cast<pros::motor_gearset_e_t>(cartridge));
   }
 
+  ProsMotorGroup(const ProsMotorGroup&) = delete;
+  ProsMotorGroup& operator=(const ProsMotorGroup&) = delete;
+
+  ProsMotorGroup(ProsMotorGroup&&) = default;
+  ProsMotorGroup& operator=(ProsMotorGroup&&) = default;
+  ~ProsMotorGroup() = default;
+
   void Move(int) override;
   void MoveVoltage(int) override;
   void MoveVelocity(float) override;
   void MoveAbsolute(double position, int max_velocity) override;
 
   void ResetEncoder() override;
-  double position() const override;
-  float velocity() const override;
+  [[nodiscard]] double position() const override;
+  [[nodiscard]] float velocity() const override;
 
  private:
   [[nodiscard]] ProsMotorCartridge cartridge() const;

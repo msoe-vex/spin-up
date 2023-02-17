@@ -12,11 +12,18 @@ class ProsController : public interface::Controller {
  public:
   ProsController(pros::controller_id_e_t id) : controller_(id) {}
 
+  ProsController(const ProsController&) = delete;
+  ProsController& operator=(const ProsController&) = delete;
+
+  ProsController(ProsController&&) = default;
+  ProsController& operator=(ProsController&&) = default;
+  ~ProsController() = default;
+
   [[nodiscard]] static std::unique_ptr<ProsController> MakeDriverController();
   [[nodiscard]] static std::unique_ptr<ProsController> MakeOperatorController();
 
-  [[nodicard]] int analog(interface::ControllerJoystick) const override;
-  [[nodiscard]] float voltage(interface::ControllerJoystick) const override;
+  int analog(interface::ControllerJoystick) const override;
+  float voltage(interface::ControllerJoystick) const override;
 
  private:
   [[nodiscard]] inline pros::Controller& controller() { return controller_; }
