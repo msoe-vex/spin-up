@@ -34,7 +34,7 @@ std::unique_ptr<ProsController> ProsController::MakeDriverController() {
   return std::make_unique<hardware::ProsController>(pros::E_CONTROLLER_MASTER);
 }
 
-std::unique_ptr<ProsController> ProsController::MakeOperatorController() {
+std::unique_ptr<ProsController> ProsController::MakeSecondaryController() {
   return std::make_unique<hardware::ProsController>(pros::E_CONTROLLER_PARTNER);
 }
 }  // namespace hardware

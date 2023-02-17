@@ -20,7 +20,8 @@ class ProsController : public interface::Controller {
   ~ProsController() = default;
 
   [[nodiscard]] static std::unique_ptr<ProsController> MakeDriverController();
-  [[nodiscard]] static std::unique_ptr<ProsController> MakeOperatorController();
+  [[nodiscard]] static std::unique_ptr<ProsController>
+  MakeSecondaryController();
 
   int analog(interface::ControllerJoystick) const override;
   float voltage(interface::ControllerJoystick) const override;
