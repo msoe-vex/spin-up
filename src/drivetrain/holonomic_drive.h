@@ -6,9 +6,9 @@
 #include "interface/motor.h"
 
 namespace drivetrain {
-class HolonomicDrive {
+class HolonomicDrivetrain {
  public:
-  HolonomicDrive(HolonomicMotors holonomic_motors)
+  HolonomicDrivetrain(HolonomicMotors holonomic_motors)
       : holonomic_motors_(std::move(holonomic_motors)) {}
 
  protected:
@@ -23,14 +23,14 @@ class HolonomicDrive {
 /**
  * Implements a holonomic drive system.
  */
-class FieldOrientedHolonomicDrive : public HolonomicDrive {
+class FieldOrientedHolonomicDrivetrain : public HolonomicDrivetrain {
  public:
-  using HolonomicDrive::HolonomicDrive;
+  using HolonomicDrivetrain::HolonomicDrivetrain;
 };
 
-class HolonomicDirectDrive : virtual public HolonomicDrive {
+class HolonomicDirectDrivetrain : virtual public HolonomicDrivetrain {
  public:
-  using HolonomicDrive::HolonomicDrive;  // constructor inheritance
+  using HolonomicDrivetrain::HolonomicDrivetrain;  // constructor inheritance
 
   void Drive(const interface::Controller&);
 };

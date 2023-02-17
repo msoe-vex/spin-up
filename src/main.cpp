@@ -74,7 +74,7 @@ void autonomous() {}
 void opcontrol() {
   auto driver_controller_ptr = hardware::ProsController::MakeDriverController();
 
-  auto drivetrain = drivetrain::HolonomicDirectDrive(
+  auto drivetrain = drivetrain::HolonomicDirectDrivetrain(
       drivetrain::HolonomicMotors::MakeHolonomicMotors());
 
   while (true) { drivetrain.Drive(*driver_controller_ptr); }

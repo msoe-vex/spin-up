@@ -1,7 +1,7 @@
 #include "drivetrain/holonomic_drive.h"
 
 namespace drivetrain {
-void HolonomicDirectDrive::Drive(const interface::Controller& controller) {
+void HolonomicDirectDrivetrain::Drive(const interface::Controller& controller) {
   const std::vector<float> voltages = {
       controller.voltage(interface::ControllerJoystick::kLeftX),
       controller.voltage(interface::ControllerJoystick::kLeftY),
