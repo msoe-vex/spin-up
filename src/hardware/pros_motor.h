@@ -1,6 +1,7 @@
 #pragma once
 #include "constant/constants.h"
 #include "hardware/pros_motor_cartridge.h"
+#include "hardware/pros_motor_definition.h"
 #include "interface/encoder.h"
 #include "interface/motor.h"
 #include "pros.h"
@@ -11,9 +12,9 @@ namespace hardware {
  */
 class ProsMotor : public interface::Motor, public interface::Encoder {
  public:
-  ProsMotor(int port_number, bool reverse, ProsMotorCartridge cartridge)
+  ProsMotor(ProsMotorDefinition definition, ProsMotorCartridge cartridge)
       : motor_(
-            port_number * (reverse ? -1 : 1),
+            definition.GetProsVirtualPortNumber(),
             ConvertProsMotorCartridge(cartridge)) {}
 
   ProsMotor(const ProsMotor&) = delete;

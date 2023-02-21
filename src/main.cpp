@@ -74,10 +74,8 @@ void autonomous() {}
 void opcontrol() {
   auto driver_controller_ptr = hardware::ProsController::MakeDriverController();
 
-  auto drivetrain = drivetrain::HolonomicDirectDrivetrain(
-      drivetrain::HolonomicMotors::MakeHolonomicMotors());
-
-  while (true) { drivetrain.Drive(*driver_controller_ptr); }
+  // auto drivetrain = drivetrain::HolonomicDirectDrivetrain();
+  // while (true) { drivetrain.Drive(*driver_controller_ptr); }
 
   // pros::Controller master(pros::E_CONTROLLER_MASTER);
   // pros::Motor left_mtr(1);

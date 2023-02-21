@@ -1,21 +1,24 @@
-#include "drivetrain/holonomic_motors.h"
+#include "motor_factory.h"
 
-namespace drivetrain {
-HolonomicMotors HolonomicMotors::MakeHolonomicMotors() {
+namespace factory {
+drivetrain::HolonomicDrivetrain MakeHolonomicDrivetrain(
+    HolonomicDrivetrainDefinition drivetrainDefinition) {
   std::vector<std::unique_ptr<interface::Motor>> motor_ptrs;
   // emplace back constructs the ptr inside the vector instead of copying
   motor_ptrs.emplace_back(std::make_unique<hardware::ProsMotorGroup>(
-      constant::kFrontRightMotorPorts, constant::kDrivetrainReverse,
+      drivetrainDefinition.frontRightMotorDefinitions,
       constant::kDrivetrainCartridge));
   motor_ptrs.emplace_back(std::make_unique<hardware::ProsMotorGroup>(
-      constant::kBackRightMotorPorts, constant::kDrivetrainReverse,
+      drivetrainDefinition.backRightMotorDefinitions,
       constant::kDrivetrainCartridge));
   motor_ptrs.emplace_back(std::make_unique<hardware::ProsMotorGroup>(
-      constant::kBackLeftMotorPorts, constant::kDrivetrainReverse,
+      drivetrainDefinition.backLeftMotorDefinitions,
       constant::kDrivetrainCartridge));
   motor_ptrs.emplace_back(std::make_unique<hardware::ProsMotorGroup>(
-      constant::kFrontLeftMotorPorts, constant::kDrivetrainReverse,
+      drivetrainDefinition.frontLeftMotorDefinitions,
       constant::kDrivetrainCartridge));
-  return HolonomicMotors(std::move(motor_ptrs));
+
+  return drivetrain::HolonomicDrivetrain(
+      drivetrain::HolonomicMotors(std::move(motor_ptrs)));
 }
-}  // namespace drivetrain
+}  // namespace factory

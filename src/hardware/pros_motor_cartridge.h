@@ -9,12 +9,16 @@ enum class ProsMotorCartridge {
   kGreenCartridge = pros::E_MOTOR_GEAR_GREEN  // 200 rpm
 };
 
+/**
+ * Converts a ProsMotorCartridge to a pros gearset.
+ */
 [[nodiscard]] pros::motor_gearset_e_t ConvertProsMotorCartridge(
     ProsMotorCartridge);
-[[nodiscard]] ProsMotorCartridge ConvertProsGearset(pros::motor_gearset_e_t);
 
 /**
- * A helper function for getting the max rpm of a motor.
+ * Converts a pros gearset to a ProsMotorCartridge.
  */
+[[nodiscard]] ProsMotorCartridge ConvertProsGearset(pros::motor_gearset_e_t);
+
 [[nodiscard]] int GetMaxRpm(const ProsMotorCartridge);
 }  // namespace hardware

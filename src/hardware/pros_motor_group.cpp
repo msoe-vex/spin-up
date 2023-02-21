@@ -26,17 +26,14 @@ float ProsMotorGroup::velocity() const {
   return (rpm / max_rpm()) * constant::kMaxVelocity;
 }
 
-std::vector<std::int8_t> ProsMotorGroup::FlipPortNumbers(
-    std::vector<int> port_numbers, std::vector<bool> reverse) {
-  if (port_numbers.size() != reverse.size()) {
-    throw std::invalid_argument(
-        "Expected port_numbers to be the same size as reverse.");
-  }
-
+std::vector<std::int8_t> ProsMotorGroup::ExtractVirtualPortNumbers(
+    std::vector<ProsMotorDefinition> definitions) {
   std::vector<std::int8_t> result;
-  for (int i = 0; i < port_numbers.size(); ++i) {
-    result.push_back(port_numbers[i] * (reverse[i] ? -1 : 1));
-  }
+  std::transform(
+      definitions.cbegin(), definitions.cend(), std::back_inserter(result),
+      [](ProsMotorDefinition definition) {
+        return static_cast<std::int8_t>(definition.GetProsVirtualPortNumber());
+      });
   return result;
 }
 
