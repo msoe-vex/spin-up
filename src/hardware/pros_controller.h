@@ -23,8 +23,8 @@ class ProsController : public interface::Controller {
   [[nodiscard]] static std::unique_ptr<ProsController>
   MakeSecondaryController();
 
-  int analog(interface::ControllerJoystick) const override;
-  float voltage(interface::ControllerJoystick) const override;
+  int GetJoystickAnalog(interface::ControllerJoystick) const override;
+  float GetJoystickVoltage(interface::ControllerJoystick) const override;
 
  private:
   [[nodiscard]] inline pros::Controller& controller() { return controller_; }
