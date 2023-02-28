@@ -75,6 +75,5 @@ Formally, functions behave similarity to methods, but methods are defined as a p
 ## Use Cases
 Functions should be used in cases where access to encapsulated data is not required. As a reminder, you should avoid using classes to arbitrarily group similar functions together; use a namespace instead.
 
-
 ## Naming
 Non-method functions which do more computation or which do not expose (or pretend to expose) a field on a class should be written as `Get<MyValue>`, e.g. `GetProsJoystick`. Keep in mind that classes should not be used to group arbitrary functions together; namespaces already serve this purpose.
