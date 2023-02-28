@@ -26,11 +26,14 @@
         "COMMS",
         "Holonomic",
         "libeigen",
+        "nodiscard",
         "opcontrol",
         "proto",
         "rclcpp",
         "rosdep",
         "rpms",
+        "struct",
+        "Structs",
         "VEXU"
     ],
     "files.associations": {

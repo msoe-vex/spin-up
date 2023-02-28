@@ -20,7 +20,7 @@ Virtual interfaces are used to create an abstraction layer between use cases on 
 In contrast, subsystems should interact with `interface`s only (and not concrete implementations). For example, a drivetrain should receive `interface::Motor`s and an `interface::Controller` rather than, say, `ProsMotor` and `ProsController`. This enables these implementations to be freely swapped. Generally, users should only take references to specific `interface`s needed since taking the entire `std::unique_ptr` takes ownership of that object. For example, `HolonomicDrivetrain` may receive a controller to work with using the signature `Drive(const interface::Controller& controller) {}`. This method should be called by dereferencing the `std::unique_ptr<ProsController>` pointer managed by main, e.g. `drivetrain.Drive(*controller_ptr);`. 
 
 # Header and Source Files
-`.h` files are called header files and define static information about c++ constructs. They are used by the compiler to seperate the linking of code constructs from the concrete implementations, which improves the performance of the c++ compiler. 
+`.h` files are called header files and define static information about c++ constructs. They are used by the compiler to separate the linking of code constructs from the concrete implementations, which improves the performance of the c++ compiler. 
 
 Header files (`.h`) should observe the following rules:
 1. Begin with `#pragma once`. `#pragma once` is a directive which ensures the c++ compiler will not link the same header file more than once.
@@ -40,7 +40,7 @@ Source files (`.cpp`) should observe the following rules:
 # Classes and Structs
 `class`es are collections of data and and methods. Methods are functions which can operate on the data of a class.
 `struct`s are functionally very similar to classes; key differences are:
-1. `struct`s primarily exist to hold data, wheras `class`es also include operations on their data.
+1. `struct`s primarily exist to hold data, whereas `class`es also include operations on their data.
 2. `class` data members are named with a trailing underscore, e.g. `my_class_member_`, whereas `struct` members are named without, e.g. `my_struct_member`.
 3. `class` data is should be marked private and exposed via a getter method, whereas `struct` data is typically marked public and thus exposed directly.
 
@@ -63,6 +63,17 @@ Formally, functions behave similarity to methods, but methods are defined as a p
 
 ## Use Cases
 Functions should be used in cases where access to encapsulated data is not required. As a reminder, you should avoid using classes to arbitrarily group similar functions together; use a namespace instead.
+
+## `[[nodiscard]]`
+`[[nodiscard]]` may be prepended to a function or method declaration with a non-void return type to indicate that calling code should actually use the return type in some way. This is enforced by the compiler at compile time via a warning. `[[nodiscard]]` should be used to annotate methods which return values and have no side-effects:
+```
+// function declaration
+[[nodiscard]] int getValue() { return 5; };
+
+getValue(); // compiler warning; result of getValue() should be used
+if (getValue() == 1) {} // okay; getValue() is used
+int value = getValue(); // also okay
+```
 
 ## Naming
 Non-method functions which do more computation or which do not expose (or pretend to expose) a field on a class should be written as `Get<MyValue>`, e.g. `GetProsJoystick`. Keep in mind that classes should not be used to group arbitrary functions together; namespaces already serve this purpose.
