@@ -50,7 +50,18 @@ Source files (`.cpp`) should observe the following rules:
 To prevent issues with `const` from arising in regards to `pros` implementations, some `hardware` classes mark `pros` objects as `mutable`, which allows non-`const` methods on these `pros` to manipulated in a `const` context. To help facilitate this, `const` getters return non-`const` references to the `pros` object.
 
 ### Getters
-Methods (but not functions) which behave like simple getters (e.g. encoder's `velocity`) should be written as standard variables (as opposed to `Velocity` or `GetVelocity`). 
+A getter is a method which is used to retrive a value from a class.  Methods (but not functions) which behave like simple getters should be named like a standard variable instead of using standard method naming convetions (e.g. `velocity()` instead of `Velocity()` or `GetVelocity()`). Note getters should also often be annotated with `[[nodiscard]]` since a call to a getter which does not use the result is redundant.
+
+## \[\[nodiscard\]\]
+`[[nodiscard]]` may be prepended to a function or method declaration with a non-void return type to indicate that calling code should actually use the return type in some way. This is enforced by the compiler at compile time via a warning. `[[nodiscard]]` should be used to annotate methods which return values and have no side-effects:
+```
+// function declaration
+[[nodiscard]] int getValue() { return 5; };
+
+getValue(); // compiler warning; result of getValue() should be used
+if (getValue() == 1) {} // okay; getValue() is used
+int value = getValue(); // also okay
+```
 
 ### Factory Methods
 Factory methods should be `static` methods belonging to either a concrete implementation or a subsystem. Their name should be `Make`, e.g. `MakeDriverController`. They should return one or more `std::unique_ptr`s which are set to the concrete implementation rather than the underlying interface (e.g. `ProsController`, not `interface::Controller`). This enables useage of additional, non-interface methods in `main` and supports classes which implement more than one interface (like `ProsMotor`).
@@ -64,16 +75,6 @@ Formally, functions behave similarity to methods, but methods are defined as a p
 ## Use Cases
 Functions should be used in cases where access to encapsulated data is not required. As a reminder, you should avoid using classes to arbitrarily group similar functions together; use a namespace instead.
 
-## `[[nodiscard]]`
-`[[nodiscard]]` may be prepended to a function or method declaration with a non-void return type to indicate that calling code should actually use the return type in some way. This is enforced by the compiler at compile time via a warning. `[[nodiscard]]` should be used to annotate methods which return values and have no side-effects:
-```
-// function declaration
-[[nodiscard]] int getValue() { return 5; };
-
-getValue(); // compiler warning; result of getValue() should be used
-if (getValue() == 1) {} // okay; getValue() is used
-int value = getValue(); // also okay
-```
 
 ## Naming
 Non-method functions which do more computation or which do not expose (or pretend to expose) a field on a class should be written as `Get<MyValue>`, e.g. `GetProsJoystick`. Keep in mind that classes should not be used to group arbitrary functions together; namespaces already serve this purpose.
