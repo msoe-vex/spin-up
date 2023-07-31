@@ -15,6 +15,8 @@ Header files which use pros should include `main.h`, as that defines the pros li
 
 ### Commands
 Use `pros make` to build code.
+
+In the event `pros make` builds successfully but fails to Link the project, try running `make clean` to delete any generated build files, then run `pros make` again.
 <!-- * Use VS Code's **Run and Debug** menu (*Ctrl + Shift + D*) to compile and run programs in debugging mode. -->
 <!-- * Run `make` to compile everything.
 * Run `make clean` or `make purge` to cleanup generated files. -->
